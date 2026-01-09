@@ -242,14 +242,14 @@ const Dashboard3 = () => {
                       </td>
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-2">
-                          <button className="w-8 h-8 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded">
-                            <Eye className="w-4 h-4 text-white" />
+                          <button>
+                            <Eye className="w-4 h-4 text-gray-600" />
                           </button>
-                          <button className="w-8 h-8 flex items-center justify-center bg-pink-500 hover:bg-pink-600 text-white rounded">
-                            <Edit className="w-4 h-4 text-white" />
+                          <button>
+                            <Edit className="w-4 h-4 text-gray-600" />
                           </button>
-                          <button className="w-8 h-8 flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded">
-                            <Trash2 className="w-4 h-4 text-white" />
+                          <button>
+                            <Trash2 className="w-4 h-4 text-gray-600" />
                           </button>
                         </div>
                       </td>

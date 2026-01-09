@@ -8,6 +8,8 @@ import Sales from './components/sales/Sales'
 import Orders from './components/orders/Orders'
 import Payments from './components/payments/Payments'
 import Support from './components/support/Support'
+import Invoice from './components/Invoice'
+import InvoiceList from './components/InvoiceList'
 import './App.css'
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/sales" element={<Sales />} />
           <Route path="/payments" element={<Payments />} />
+          <Route path="/invoices" element={<Invoice />} />
+          <Route path="/invoice-list" element={<InvoiceList />} />
           <Route path="/support" element={<Support />} />
           <Route path="/users" element={<div className="p-6"><h1 className="text-2xl font-bold">Users Page</h1></div>} />
           <Route path="/orders" element={<Orders />} />

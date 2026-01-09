@@ -10,7 +10,8 @@ import {
   Package,
   TrendingUp,
   CreditCard,
-  LifeBuoy
+  LifeBuoy,
+  FileText
 } from 'lucide-react'
 
 interface SidebarProps {
@@ -20,6 +21,7 @@ interface SidebarProps {
 
 const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
   const [isDashboardOpen, setIsDashboardOpen] = useState(true)
+  const [isCollapsed, setIsCollapsed] = useState(false)
   const location = useLocation()
 
   // treat root '/' specially, otherwise match prefix for nested routes
@@ -45,7 +47,9 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
     { title: 'Orders', icon: ShoppingCart, path: '/orders' },
     { title: 'Payments', icon: CreditCard, path: '/payments' },
     { title: 'Support', icon: LifeBuoy, path: '/support' },
-    { title: 'Settings', icon: Settings, path: '/settings' }
+    { title: 'Invoices', icon: CreditCard, path: '/invoices' },
+    { title: 'Invoice List', icon: FileText, path: '/invoice-list' },
+    // { title: 'Settings', icon: Settings, path: '/settings' }
   ]
 
   return (
@@ -61,7 +65,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
       </button>
 
       {/* Sidebar (toggle for all breakpoints) */}
-      <div className={`fixed left-0 top-0 h-full bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-72`}>
+      <div className={`fixed left-0 top-0 h-full bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-72 flex flex-col`}>
         
         {/* Logo */}
         <div className="p-6 border-b border-gray-100">
@@ -69,7 +73,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
         </div>
 
         {/* Navigation */}
-        <nav className="p-4">
+        <nav className="p-4 overflow-y-auto flex-1 min-h-0">
           <ul className="space-y-2">
             {menuItems.map((item, index) => (
               <li key={index}>
