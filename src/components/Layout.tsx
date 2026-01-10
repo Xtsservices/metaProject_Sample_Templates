@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Sidebar from './Sidebar'
 
 interface LayoutProps {
   children: React.ReactNode
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Layout = ({ children }: LayoutProps) => {
-  const [isOpen, setIsOpen] = useState(true)
-
+const Layout = ({ children, isOpen, setIsOpen }: LayoutProps) => {
   return (
     <div className="flex h-screen bg-gray-50">
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
