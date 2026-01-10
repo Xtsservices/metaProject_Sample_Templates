@@ -1,4 +1,10 @@
+// src/App.tsx
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import LandingPage from './components/LandingPage'
+import PharmacyHome from './components/pharmacy/PharmacyHome'
+import PharmacyAbout from './components/pharmacy/PharmacyAbout';
+// import AboutUs from './components/pharmacy/AboutUs'
 import Layout from './components/Layout'
 import PharmacyDashboard from './components/dashboards/Dashboard'
 import Dashboard2 from './components/dashboards/Dashboard2'
@@ -12,26 +18,43 @@ import Invoice from './components/Invoice'
 import InvoiceList from './components/InvoiceList'
 import './App.css'
 
+
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<PharmacyDashboard />} />
-          <Route path="/dashboard2" element={<Dashboard2 />} />
-          <Route path="/dashboard3" element={<Dashboard3 />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/sales" element={<Sales />} />
-          <Route path="/payments" element={<Payments />} />
-          <Route path="/invoices" element={<Invoice />} />
-          <Route path="/invoice-list" element={<InvoiceList />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/users" element={<div className="p-6"><h1 className="text-2xl font-bold">Users Page</h1></div>} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/reports" element={<div className="p-6"><h1 className="text-2xl font-bold">Reports Page</h1></div>} />
-          <Route path="/settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Settings Page</h1></div>} />
-        </Routes>
-      </Layout>
+      <Routes>
+        {/* Landing Page - Role Selection (No Layout) */}
+        <Route path="/" element={<LandingPage />} />
+        
+        <Route path="/pharmacy">
+          <Route index element={<PharmacyHome />} />           {/* /pharmacy → home */}
+          <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
+          {/* You can easily add more later, e.g.: */}
+          {/* <Route path="shop" element={<ShopPage />} /> */}
+          {/* <Route path="contact" element={<ContactPage />} /> */}
+        </Route>
+        
+        {/* All Dashboard Routes with Layout */}
+        <Route path="/*" element={
+          <Layout>
+            <Routes>
+              <Route path="/dashboard" element={<PharmacyDashboard />} />
+              <Route path="/dashboard2" element={<Dashboard2 />} />
+              <Route path="/dashboard3" element={<Dashboard3 />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/sales" element={<Sales />} />
+              <Route path="/payments" element={<Payments />} />
+              <Route path="/invoices" element={<Invoice />} />
+              <Route path="/invoice-list" element={<InvoiceList />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/users" element={<div className="p-6"><h1 className="text-2xl font-bold">Users Page</h1></div>} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/reports" element={<div className="p-6"><h1 className="text-2xl font-bold">Reports Page</h1></div>} />
+              <Route path="/settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Settings Page</h1></div>} />
+            </Routes>
+          </Layout>
+        } />
+      </Routes>
     </Router>
   )
 }
