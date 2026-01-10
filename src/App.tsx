@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import PharmacyDashboard from './components/dashboards/Dashboard'
@@ -11,26 +12,38 @@ import Support from './components/support/Support'
 import Invoice from './components/Invoice'
 import InvoiceList from './components/InvoiceList'
 import './App.css'
+import Header from './components/Header'
 
 function App() {
+  const [isOpen, setIsOpen] = useState(true)
+
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<PharmacyDashboard />} />
-          <Route path="/dashboard2" element={<Dashboard2 />} />
-          <Route path="/dashboard3" element={<Dashboard3 />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/sales" element={<Sales />} />
-          <Route path="/payments" element={<Payments />} />
-          <Route path="/invoices" element={<Invoice />} />
-          <Route path="/invoice-list" element={<InvoiceList />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/users" element={<div className="p-6"><h1 className="text-2xl font-bold">Users Page</h1></div>} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/reports" element={<div className="p-6"><h1 className="text-2xl font-bold">Reports Page</h1></div>} />
-          <Route path="/settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Settings Page</h1></div>} />
-        </Routes>
+      <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+        <div className="flex">
+          {/* Sidebar (existing) */}
+          {/* ...existing sidebar code... */}
+
+          {/* Main content: add top padding equal to header height */}
+          <main className="flex-1 pt-16">
+            <Routes>
+              <Route path="/" element={<PharmacyDashboard />} />
+              <Route path="/dashboard2" element={<Dashboard2 />} />
+              <Route path="/dashboard3" element={<Dashboard3 />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/sales" element={<Sales />} />
+              <Route path="/payments" element={<Payments />} />
+              <Route path="/invoices" element={<Invoice />} />
+              <Route path="/invoice-list" element={<InvoiceList />} />
+              <Route path="/support" element={<Support />} />
+              <Route path="/users" element={<div className="p-6"><h1 className="text-2xl font-bold">Users Page</h1></div>} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/reports" element={<div className="p-6"><h1 className="text-2xl font-bold">Reports Page</h1></div>} />
+              <Route path="/settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Settings Page</h1></div>} />
+            </Routes>
+          </main>
+        </div>
       </Layout>
     </Router>
   )

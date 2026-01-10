@@ -15,6 +15,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --header-height: 4rem; /* 16 -> pt-16 tailwind = 4rem */
 }
 
 a {
@@ -30,6 +32,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  /* Optional: ensure any top-fixed elements respect the header when you prefer global approach */
+  /* padding-top: var(--header-height); */  /* <-- if you want global padding instead of adding pt-16 to main */
 }
 
 h1 {
