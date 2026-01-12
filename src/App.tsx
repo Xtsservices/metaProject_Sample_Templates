@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import PharmacyHome from './components/pharmacy/PharmacyHome'
 import PharmacyAbout from './components/pharmacy/PharmacyAbout';
+import PharmacyContact from './components/pharmacy/PharmacyContact';
+import BloodBankHome from './components/BloodBank/BloodBankHome';
+// import BloodBankAbout from './components/BloodBank/BloodBankAbout';
 // import AboutUs from './components/pharmacy/AboutUs'
 import Layout from './components/Layout'
 import PharmacyDashboard from './components/dashboards/Dashboard'
@@ -29,9 +32,14 @@ function App() {
         <Route path="/pharmacy">
           <Route index element={<PharmacyHome />} />           {/* /pharmacy → home */}
           <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
+         <Route path="/pharmacy/contact" element={<PharmacyContact />} />
           {/* You can easily add more later, e.g.: */}
           {/* <Route path="shop" element={<ShopPage />} /> */}
           {/* <Route path="contact" element={<ContactPage />} /> */}
+        </Route>
+        <Route path="/bloodbank" >
+        <Route index  element={<BloodBankHome/>} />
+        {/* <Route path="/bloodbank/about" element={<BloodBankAbout />} /> */}
         </Route>
         
         {/* All Dashboard Routes with Layout */}
