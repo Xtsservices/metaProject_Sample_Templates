@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Users, Package, Clock, XCircle, Eye, Download, Share2, TrendingUp, TrendingDown } from 'lucide-react';
 
 const Dashboard2 = () => {
@@ -71,14 +72,24 @@ const Dashboard2 = () => {
     { name: 'Orlence', image: '🏠', price: '$365' },
   ];
 
-  // Transaction data
-  const transactions = [
-    { id: '#ORD121', customer: 'John', date: '27/08/25', product: 'NuSkin-I-(0)', price: '$50', transId: '#71121', status: 'Completed', statusColor: 'bg-green-100 text-green-700' },
-    { id: '#ORD122', customer: 'Emily', date: '26/08/25', product: 'ThincoId-(6)', price: '$20', transId: '#71122', status: 'Pending', statusColor: 'bg-yellow-100 text-yellow-700' },
-    { id: '#ORD123', customer: 'Michael', date: '26/08/25', product: 'CP-0004-(4)', price: '$10', transId: '#71123', status: 'Pending', statusColor: 'bg-yellow-100 text-yellow-700' },
-    { id: '#ORD124', customer: 'Brown', date: '26/08/25', product: 'MidiGhana-(4)', price: '$20', transId: '#71124', status: 'Completed', statusColor: 'bg-green-100 text-green-700' },
-    { id: '#ORD125', customer: 'Lisa', date: '25/08/25', product: 'INV-251-(4)', price: '$5', transId: '#71125', status: 'Cancelled', statusColor: 'bg-pink-100 text-pink-700' },
+  // transactions moved to state so status can be changed per row
+  const initialTransactions = [
+    { id: '#ORD121', customer: 'John', date: '27/08/25', product: 'NuSkin-I-(0)', price: '$50', transId: '#71121', status: 'Completed' },
+    { id: '#ORD122', customer: 'Emily', date: '26/08/25', product: 'ThincoId-(6)', price: '$20', transId: '#71122', status: 'Pending' },
+    { id: '#ORD123', customer: 'Michael', date: '26/08/25', product: 'CP-0004-(4)', price: '$10', transId: '#71123', status: 'Pending' },
+    { id: '#ORD124', customer: 'Brown', date: '26/08/25', product: 'MidiGhana-(4)', price: '$20', transId: '#71124', status: 'Completed' },
+    { id: '#ORD125', customer: 'Lisa', date: '25/08/25', product: 'INV-251-(4)', price: '$5', transId: '#71125', status: 'Cancelled' },
   ];
+  const [transactions, setTransactions] = useState(initialTransactions);
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'Completed': return 'bg-green-100 text-green-700';
+      case 'Pending': return 'bg-yellow-100 text-yellow-700';
+      case 'Cancelled': return 'bg-pink-100 text-pink-700';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
 
   const maxSales = Math.max(...salesData.map(d => d.value));
 
@@ -281,8 +292,8 @@ const Dashboard2 = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {transactions.map((trans, index) => (
-                    <tr key={index} className="border-b border-gray-50 hover:bg-gray-50">
+                {transactions.map((trans) => (
+                    <tr key={trans.id} className="border-b border-gray-50 hover:bg-gray-50">
                     <td className="py-3 px-4 text-sm text-gray-900">{trans.id}</td>
                     <td className="py-3 px-4 text-sm text-gray-900">{trans.customer}</td>
                     <td className="py-3 px-4 text-sm text-gray-600">{trans.date}</td>
@@ -290,9 +301,18 @@ const Dashboard2 = () => {
                     <td className="py-3 px-4 text-sm text-gray-900">{trans.price}</td>
                     <td className="py-3 px-4 text-sm text-gray-600">{trans.transId}</td>
                     <td className="py-3 px-4">
-                        <span className={`text-xs px-3 py-1 rounded-full font-medium ${trans.statusColor}`}>
-                        {trans.status}
-                        </span>
+                        <select
+                          value={trans.status}
+                          onChange={(e) => {
+                            const newStatus = e.target.value;
+                            setTransactions(prev => prev.map(t => t.id === trans.id ? { ...t, status: newStatus } : t));
+                          }}
+                          className={`text-xs px-3 py-1 rounded-full font-medium ${getStatusColor(trans.status)} border-none focus:outline-none`}
+                        >
+                          <option value="Completed">Completed</option>
+                          <option value="Pending">Pending</option>
+                          <option value="Cancelled">Cancelled</option>
+                        </select>
                     </td>
                     <td className="py-3 px-4">
                         <div className="flex items-center gap-2">

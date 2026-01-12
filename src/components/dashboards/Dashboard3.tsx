@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { TrendingUp, Users, Package, Clock, XCircle, Eye, Edit, Trash2 } from 'lucide-react';
 
 const Dashboard3 = () => {
@@ -25,14 +26,24 @@ const Dashboard3 = () => {
     { month: 'Dec', value: 73 },
   ];
 
-  // Top selling products
-  const products = [
-    { id: '#ORD121', name: 'NubiSCin', quantity: '120 Units', price: '$2.08', status: 'In Stock', statusColor: 'bg-green-100 text-green-700' },
-    { id: '#ORD122', name: 'Midicannie', quantity: '50 Units', price: '$6', status: 'Out Of stock', statusColor: 'bg-red-100 text-red-700' },
-    { id: '#ORD123', name: 'PrescidIF', quantity: '38 Units', price: '$10', status: 'Limited', statusColor: 'bg-yellow-100 text-yellow-700' },
-    { id: '#ORD124', name: 'CP-0004', quantity: '80 Units', price: '$2', status: 'In Stock', statusColor: 'bg-green-100 text-green-700' },
-    { id: '#ORD125', name: 'INV-231', quantity: '18 Units', price: '$8', status: 'In Stock', statusColor: 'bg-green-100 text-green-700' },
+  // top products moved to state so status can be changed per row
+  const initialProducts = [
+    { id: '#ORD121', name: 'NubiSCin', quantity: '120 Units', price: '$2.08', status: 'In Stock' },
+    { id: '#ORD122', name: 'Midicannie', quantity: '50 Units', price: '$6', status: 'Out Of stock' },
+    { id: '#ORD123', name: 'PrescidIF', quantity: '38 Units', price: '$10', status: 'Limited' },
+    { id: '#ORD124', name: 'CP-0004', quantity: '80 Units', price: '$2', status: 'In Stock' },
+    { id: '#ORD125', name: 'INV-231', quantity: '18 Units', price: '$8', status: 'In Stock' },
   ];
+  const [products, setProducts] = useState(initialProducts);
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'In Stock': return 'bg-green-100 text-green-700';
+      case 'Out Of stock': return 'bg-red-100 text-red-700';
+      case 'Limited': return 'bg-yellow-100 text-yellow-700';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
 
   // Bottom stats
   const bottomStats = [
@@ -236,9 +247,18 @@ const Dashboard3 = () => {
                       <td className="py-4 px-4 text-sm text-gray-600">{product.quantity}</td>
                       <td className="py-4 px-4 text-sm text-gray-900">{product.price}</td>
                       <td className="py-4 px-4">
-                        <span className={`text-xs px-3 py-1 rounded-full font-medium ${product.statusColor}`}>
-                          {product.status}
-                        </span>
+                        <select
+                          value={product.status}
+                          onChange={(e) => {
+                            const newStatus = e.target.value;
+                            setProducts(prev => prev.map(p => p.id === product.id ? { ...p, status: newStatus } : p));
+                          }}
+                          className={`text-xs px-3 py-1 rounded-full font-medium ${getStatusColor(product.status)} border-none focus:outline-none`}
+                        >
+                          <option value="In Stock">In Stock</option>
+                          <option value="Out Of stock">Out Of stock</option>
+                          <option value="Limited">Limited</option>
+                        </select>
                       </td>
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-2">
