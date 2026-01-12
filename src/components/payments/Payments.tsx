@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle, AlertTriangle, XCircle, MoreVertical, Eye, Trash2, Share2 } from 'lucide-react';
 
 interface PaymentStat {
@@ -56,7 +56,7 @@ const Payments: React.FC = () => {
     }
   ];
 
-  const payments: Payment[] = [
+  const initialPayments: Payment[] = [
     { orderId: '#ORD121', customerName: 'Jhon', orderDate: '27/08/25', productOrdered: 'Nullacin (10)', totalPrice: 50, transactionId: '#TX121', orderStatus: 'completed' },
     { orderId: '#ORD122', customerName: 'Emily', orderDate: '26/08/25', productOrdered: 'Theralief (4)', totalPrice: 20, transactionId: '#TX122', orderStatus: 'in-progress' },
     { orderId: '#ORD123', customerName: 'Michael', orderDate: '26/08/25', productOrdered: 'CP-0004 (4)', totalPrice: 10, transactionId: '#TX123', orderStatus: 'pending' },
@@ -68,6 +68,7 @@ const Payments: React.FC = () => {
     { orderId: '#ORD129', customerName: 'Moore', orderDate: '22/08/25', productOrdered: 'Theralief (14)', totalPrice: 56, transactionId: '#TX129', orderStatus: 'completed' },
     { orderId: '#ORD130', customerName: 'Jhon', orderDate: '21/08/25', productOrdered: 'Simupril (9)', totalPrice: 10, transactionId: '#TX130', orderStatus: 'completed' }
   ];
+  const [payments, setPayments] = useState<Payment[]>(initialPayments);
 
   const getOrderStatusStyle = (status: string) => {
     switch (status) {
@@ -243,9 +244,19 @@ const Payments: React.FC = () => {
                       {payment.transactionId}
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getOrderStatusStyle(payment.orderStatus)}`}>
-                        {payment.orderStatus === 'in-progress' ? 'In progress' : payment.orderStatus.charAt(0).toUpperCase() + payment.orderStatus.slice(1)}
-                      </span>
+                      <select
+                        value={payment.orderStatus}
+                        onChange={(e) => {
+                          const newStatus = e.target.value as Payment['orderStatus'];
+                          setPayments(prev => prev.map(p => p.orderId === payment.orderId ? { ...p, orderStatus: newStatus } : p));
+                        }}
+                        className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getOrderStatusStyle(payment.orderStatus)} border-none focus:outline-none`}
+                      >
+                        <option value="completed">Completed</option>
+                        <option value="in-progress">In progress</option>
+                        <option value="pending">Pending</option>
+                        <option value="cancelled">Cancelled</option>
+                      </select>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">

@@ -34,7 +34,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
       icon: LayoutDashboard,
       hasSubmenu: true,
       submenu: [
-        { title: 'Pharmacy Dashboard', path: '/' },
+        { title: 'Pharmacy Dashboard', path: '/dashboard' },
         { title: 'Analytics Dashboard', path: '/dashboard2' },
         { title: 'Inventory Dashboard', path: '/dashboard3' }
       ]

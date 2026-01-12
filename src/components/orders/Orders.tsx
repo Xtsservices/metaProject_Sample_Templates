@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TrendingUp, TrendingDown, MoreVertical, Eye, Trash2, Share2 } from 'lucide-react';
 
 interface StatCard {
@@ -66,7 +66,7 @@ const Orders: React.FC = () => {
     }
   ];
 
-  const orders: Order[] = [
+  const initialOrders: Order[] = [
     { id: '#ORD121', customerName: 'Jhon', orderDate: '27/08/25', productOrdered: 'Nullacin (10)', totalPrice: 50, paymentStatus: 'paid', orderStatus: 'completed' },
     { id: '#ORD122', customerName: 'Emily', orderDate: '26/08/25', productOrdered: 'Theralief (4)', totalPrice: 20, paymentStatus: 'pending', orderStatus: 'in-progress' },
     { id: '#ORD123', customerName: 'Michael', orderDate: '26/08/25', productOrdered: 'CP-0004 (4)', totalPrice: 10, paymentStatus: 'paid', orderStatus: 'pending' },
@@ -78,6 +78,7 @@ const Orders: React.FC = () => {
     { id: '#ORD129', customerName: 'Moore', orderDate: '22/08/25', productOrdered: 'Theralief (14)', totalPrice: 56, paymentStatus: 'paid', orderStatus: 'completed' },
     { id: '#ORD130', customerName: 'Jhon', orderDate: '21/08/25', productOrdered: 'Simupril (9)', totalPrice: 10, paymentStatus: 'paid', orderStatus: 'in-progress' }
   ];
+  const [orders, setOrders] = useState<Order[]>(initialOrders);
 
   const getPaymentStatusStyle = (status: string) => {
     switch (status) {
@@ -276,14 +277,33 @@ const Orders: React.FC = () => {
                       ${order.totalPrice}
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getPaymentStatusStyle(order.paymentStatus)}`}>
-                        {order.paymentStatus.charAt(0).toUpperCase() + order.paymentStatus.slice(1)}
-                      </span>
+                      <select
+                        value={order.paymentStatus}
+                        onChange={(e) => {
+                          const newStatus = e.target.value as Order['paymentStatus'];
+                          setOrders(prev => prev.map(o => o.id === order.id ? { ...o, paymentStatus: newStatus } : o));
+                        }}
+                        className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getPaymentStatusStyle(order.paymentStatus)} border-none focus:outline-none`}
+                      >
+                        <option value="paid">Paid</option>
+                        <option value="pending">Pending</option>
+                        <option value="failed">Failed</option>
+                      </select>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getOrderStatusStyle(order.orderStatus)}`}>
-                        {order.orderStatus === 'in-progress' ? 'In progress' : order.orderStatus.charAt(0).toUpperCase() + order.orderStatus.slice(1)}
-                      </span>
+                      <select
+                        value={order.orderStatus}
+                        onChange={(e) => {
+                          const newStatus = e.target.value as Order['orderStatus'];
+                          setOrders(prev => prev.map(o => o.id === order.id ? { ...o, orderStatus: newStatus } : o));
+                        }}
+                        className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getOrderStatusStyle(order.orderStatus)} border-none focus:outline-none`}
+                      >
+                        <option value="completed">Completed</option>
+                        <option value="in-progress">In progress</option>
+                        <option value="pending">Pending</option>
+                        <option value="cancelled">Cancelled</option>
+                      </select>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">
