@@ -6,9 +6,18 @@ import HospitalLanding from './components/Landing/Hospital/Landing'
 import PharmacyHome from './components/pharmacy/PharmacyHome'
 import PharmacyAbout from './components/pharmacy/PharmacyAbout';
 import PharmacyContact from './components/pharmacy/PharmacyContact';
+import PharmacyLanding from './components/pharmacy2/PharmacyLanding';
+import PharmacyAbout2 from './components/pharmacy2/PharmacyAbout2';
+import PharmacyContact2 from './components/pharmacy2/PharmacyContact2';
 import BloodBankHome from './components/BloodBank/BloodBankHome';
 // import BloodBankAbout from './components/BloodBank/BloodBankAbout';
 // import AboutUs from './components/pharmacy/AboutUs'
+import BloodBankHome2 from './components/BloodBank2/BloodBankHome2';
+import BloodBankAbout2 from './components/BloodBank2/BloodBankAbout2';
+import BloodBankDonate2 from './components/BloodBank2/BloodBankDonate2';
+import BloodBankContact2 from './components/BloodBank2/BloodBankContact2';
+import BloodBankBlog2 from './components/BloodBank2/BloodBankBlog2';
+import BloodBankSearchBlood2 from './components/BloodBank2/BloodBankSearchBlood2';
 import Layout from './components/Layout'
 import PharmacyDashboard from './components/dashboards/Dashboard'
 import Dashboard2 from './components/dashboards/Dashboard2'
@@ -36,6 +45,7 @@ import DoctorAppointment from './components/Landing/Doctor/Appointment3' // new
 import './App.css'
 
 
+
 function App() {
   return (
     <Router>
@@ -60,6 +70,10 @@ function App() {
           <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
          <Route path="/pharmacy/contact" element={<PharmacyContact />} />
         </Route>
+        <Route path="/pharmacy2" element={<PharmacyLanding />} />
+        <Route path="/pharmacy2/About" element={<PharmacyAbout2 />} />
+        <Route path="/pharmacy2/contact" element={<PharmacyContact2/>} />
+        
 
         {/* --- NEW: Doctor landing (mirror ambulance style) --- */}
         <Route path="/doctor">
@@ -74,6 +88,16 @@ function App() {
         <Route index  element={<BloodBankHome/>} />
         {/* <Route path="/bloodbank/about" element={<BloodBankAbout />} /> */}
         </Route>
+        <Route path="/bloodBank2" element={<BloodBankHome2 />} />
+        <Route path="/bloodBank2/about" element={<BloodBankAbout2 />} />
+        <Route path="/bloodBank2/Donate" element={<BloodBankDonate2 />} />
+        <Route path="/bloodBank2/contact" element={<BloodBankContact2 />} />
+        {/* <Route path="/bloodBank2/contact" element={<BloodBankContact2 />} /> */}
+        <Route path="/bloodBank2/Blog" element={<BloodBankBlog2 />} />
+        <Route path="/bloodBank2/search" element={<BloodBankSearchBlood2/>} />
+
+        
+
 
         {/* All Dashboard Routes with Layout */}
         <Route path="/*" element={
