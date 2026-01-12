@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Ticket, FileText, ThumbsUp, Users, Trash2 } from 'lucide-react';
 
 interface StatCard {
@@ -77,7 +77,7 @@ const Support: React.FC = () => {
     { name: 'Daniel', tickets: 213, color: 'bg-amber-400' }
   ];
 
-  const tickets: SupportTicket[] = [
+  const initialTickets: SupportTicket[] = [
     { id: 1011, openedBy: 'Sophia', customerEmail: 'sophia@gmail.com', subject: 'How to customize the template?', status: 'new', assignedTo: 'Elijah', date: '14-10-2018' },
     { id: 1011, openedBy: 'Mia', customerEmail: 'sophia@gmail.com', subject: 'How to customize the template?', status: 'new', assignedTo: 'Elijah', date: '14-10-2018' },
     { id: 1024, openedBy: 'Jayden', customerEmail: 'jayden@gmail.com', subject: 'How to set Horizontal nav', status: 'complete', assignedTo: 'Andrew', date: '13-10-2018' },
@@ -88,6 +88,7 @@ const Support: React.FC = () => {
     { id: 2124, openedBy: 'Ethan', customerEmail: 'ethan@gmail.com', subject: 'How this will connect with ethan', status: 'pending', assignedTo: 'Andrew', date: '12-10-2018' },
     { id: 2524, openedBy: 'Jayden', customerEmail: 'jayden@gmail.com', subject: 'How to set Horizontal nav', status: 'complete', assignedTo: 'Andrew', date: '13-10-2018' }
   ];
+  const [tickets, setTickets] = useState<SupportTicket[]>(initialTickets);
 
   const getStatusStyle = (status: string) => {
     switch (status) {
@@ -363,9 +364,18 @@ const Support: React.FC = () => {
                       {ticket.subject}
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getStatusStyle(ticket.status)}`}>
-                        {ticket.status === 'complete' ? 'Complete' : ticket.status.charAt(0).toUpperCase() + ticket.status.slice(1)}
-                      </span>
+                      <select
+                        value={ticket.status}
+                        onChange={(e) => {
+                          const newStatus = e.target.value as SupportTicket['status'];
+                          setTickets(prev => prev.map(t => t.id === ticket.id && t.openedBy === ticket.openedBy ? { ...t, status: newStatus } : t));
+                        }}
+                        className={`inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold ${getStatusStyle(ticket.status)} border-none focus:outline-none`}
+                      >
+                        <option value="complete">Complete</option>
+                        <option value="new">New</option>
+                        <option value="pending">Pending</option>
+                      </select>
                     </td>
                     <td className="px-6 py-4 text-sm text-slate-700">
                       {ticket.assignedTo}

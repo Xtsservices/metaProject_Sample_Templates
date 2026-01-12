@@ -2,6 +2,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
+import HospitalLanding from './components/Landing/Hospital/Landing'
 import PharmacyHome from './components/pharmacy/PharmacyHome'
 import PharmacyAbout from './components/pharmacy/PharmacyAbout';
 // import AboutUs from './components/pharmacy/AboutUs'
@@ -16,6 +17,19 @@ import Payments from './components/payments/Payments'
 import Support from './components/support/Support'
 import Invoice from './components/Invoice'
 import InvoiceList from './components/InvoiceList'
+import LabsLanding from './components/Landing/Labs/LabsLanding'
+import AmbulanceHome from './components/Landing/Ambulance/Home'
+import AmbulanceServices from './components/Landing/Ambulance/Services'
+import AmbulanceTeam from './components/Landing/Ambulance/Team'
+import AmbulanceContact from './components/Landing/Ambulance/Contact'
+import AmbulanceAbout from './components/Landing/Ambulance/About'
+
+// --- NEW: Doctor landing & pages ---
+import DoctorHome from './components/Landing/Doctor/Home3'
+import DoctorServices from './components/Landing/Doctor/Services3'
+import DoctorAbout from './components/Landing/Doctor/About3'
+import DoctorContact from './components/Landing/Doctor/Contact3'         // new
+import DoctorAppointment from './components/Landing/Doctor/Appointment3' // new
 import './App.css'
 
 
@@ -25,15 +39,34 @@ function App() {
       <Routes>
         {/* Landing Page - Role Selection (No Layout) */}
         <Route path="/" element={<LandingPage />} />
-        
-        <Route path="/pharmacy">
-          <Route index element={<PharmacyHome />} />           {/* /pharmacy → home */}
-          <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
-          {/* You can easily add more later, e.g.: */}
-          {/* <Route path="shop" element={<ShopPage />} /> */}
-          {/* <Route path="contact" element={<ContactPage />} /> */}
+        <Route path="/labs" element={<LabsLanding />} />
+        <Route path="/hospital" element={<HospitalLanding />} />
+
+        {/* Ambulance (existing) */}
+        <Route path="/ambulance">
+          <Route index element={<AmbulanceHome />} />
+          <Route path="/ambulance/services" element={<AmbulanceServices />} />
+          <Route path="/ambulance/team" element={<AmbulanceTeam />} />
+          <Route path="/ambulance/contact" element={<AmbulanceContact />} />
+          <Route path="/ambulance/about" element={<AmbulanceAbout />} />
         </Route>
-        
+
+        {/* Pharmacy (existing) */}
+        <Route path="/pharmacy">
+          <Route index element={<PharmacyHome />} />
+          <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
+        </Route>
+
+        {/* --- NEW: Doctor landing (mirror ambulance style) --- */}
+        <Route path="/doctor">
+          <Route index element={<DoctorHome />} />
+          <Route path="/doctor/services" element={<DoctorServices />} />
+          <Route path="/doctor/about" element={<DoctorAbout />} />
+          <Route path="/doctor/contact" element={<DoctorContact />} />
+          <Route path="/doctor/appointment" element={<DoctorAppointment />} />
+          {/* add more if needed */}
+        </Route>
+
         {/* All Dashboard Routes with Layout */}
         <Route path="/*" element={
           <Layout>

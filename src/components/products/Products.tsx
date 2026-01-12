@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Package, TrendingUp, TrendingDown, AlertTriangle, XCircle, Pill, Droplet, Heart, Syringe, Wind, Shield, Activity, MoreVertical, Eye, Edit, Share2 } from 'lucide-react';
 
 interface ProductCategory {
@@ -29,13 +29,14 @@ const Products: React.FC = () => {
     { name: 'Cardiovascular', count: 40, trend: 10, icon: <Activity className="w-6 h-6" />, color: 'bg-white' }
   ];
 
-  const products: Product[] = [
+  const initialProducts: Product[] = [
     { id: '#ORD121', name: 'Nullacin', quantity: 120, price: 2.08, status: 'in-stock' },
     { id: '#ORD122', name: 'Medicanox', quantity: 50, price: 5, status: 'out-of-stock' },
     { id: '#ORD123', name: 'Theralief', quantity: 30, price: 10, status: 'low-stock' },
     { id: '#ORD124', name: 'CP-0004', quantity: 80, price: 5, status: 'in-stock' },
     { id: '#ORD125', name: 'INV-251', quantity: 10, price: 8, status: 'in-stock' }
   ];
+  const [products, setProducts] = useState<Product[]>(initialProducts);
 
   const getStatusStyle = (status: string) => {
     switch (status) {
@@ -227,11 +228,17 @@ const Products: React.FC = () => {
                       ${product.price}
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getStatusStyle(product.status)}`}>
-                        {product.status === 'in-stock' && 'In stock'}
-                        {product.status === 'out-of-stock' && 'Out of stock'}
-                        {product.status === 'low-stock' && 'Low stock'}
-                      </span>
+                      <select
+                        value={product.status}
+                        onChange={(e) =>
+                          setProducts(prev => prev.map(p => p.id === product.id ? { ...p, status: e.target.value as Product['status'] } : p))
+                        }
+                        className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getStatusStyle(product.status)} border-none focus:outline-none`}
+                      >
+                        <option value="in-stock">In stock</option>
+                        <option value="out-of-stock">Out of stock</option>
+                        <option value="low-stock">Low stock</option>
+                      </select>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { TrendingUp, Users, ShoppingCart, Eye, FileText, Share2, MoreVertical } from 'lucide-react';
 
 const PharmacyDashboard = () => {
@@ -23,11 +24,24 @@ const PharmacyDashboard = () => {
     { name: 'Phoebe', value: 1800, color: 'bg-amber-300' },
   ];
 
-  const orders = [
-    { id: '#ORD121', medicine: 'Metformin', price: '$10.50', status: 'Delivered', statusColor: 'bg-green-100 text-green-700' },
-    { id: '#ORD122', medicine: 'Omeprazole', price: '$15.05', status: 'Delivered', statusColor: 'bg-green-100 text-green-700' },
-    { id: '#ORD123', medicine: 'Atorvastatin', price: '$13.01', status: 'Pending', statusColor: 'bg-yellow-100 text-yellow-700' },
+  // orders moved to state so status can be changed per row
+  const initialOrders = [
+    { id: '#ORD121', medicine: 'Metformin', price: '$10.50', status: 'Delivered' },
+    { id: '#ORD122', medicine: 'Omeprazole', price: '$15.05', status: 'Delivered' },
+    { id: '#ORD123', medicine: 'Atorvastatin', price: '$13.01', status: 'Pending' },
   ];
+  const [orders, setOrders] = useState(initialOrders);
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'Delivered': return 'bg-green-100 text-green-700';
+      case 'Pending': return 'bg-yellow-100 text-yellow-700';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const [statusFilter, setStatusFilter] = useState<'All' | 'Delivered' | 'Pending'>('All');
+  const filteredOrders = orders.filter(o => statusFilter === 'All' ? true : o.status === statusFilter);
 
   const maxSales = Math.max(...salesData.map(d => d.value));
 
@@ -167,15 +181,23 @@ const PharmacyDashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders.map((order, index) => (
-                    <tr key={index} className="border-b border-gray-50 hover:bg-gray-50">
+                  {filteredOrders.map((order) => (
+                    <tr key={order.id} className="border-b border-gray-50 hover:bg-gray-50">
                       <td className="py-4 px-4 text-sm text-gray-900">{order.id}</td>
                       <td className="py-4 px-4 text-sm text-gray-900">{order.medicine}</td>
                       <td className="py-4 px-4 text-sm text-gray-900">{order.price}</td>
                       <td className="py-4 px-4">
-                        <span className={`text-xs px-3 py-1 rounded-full font-medium ${order.statusColor}`}>
-                          {order.status}
-                        </span>
+                        <select
+                          value={order.status}
+                          onChange={(e) => {
+                            const newStatus = e.target.value;
+                            setOrders(prev => prev.map(o => o.id === order.id ? { ...o, status: newStatus } : o));
+                          }}
+                          className={`text-xs px-3 py-1 rounded-full font-medium ${getStatusColor(order.status)} border-none focus:outline-none`}
+                        >
+                          <option value="Delivered">Delivered</option>
+                          <option value="Pending">Pending</option>
+                        </select>
                       </td>
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-3">

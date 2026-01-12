@@ -1,17 +1,76 @@
 // src/components/LandingPage.tsx
 
 import { useNavigate } from 'react-router-dom';
-import { Shield, Pill } from 'lucide-react';
+import { Shield, Pill, Stethoscope, FlaskConical, Droplet, Ambulance, Building2 } from 'lucide-react';
 
 export default function LandingPage() {
   const navigate = useNavigate();
 
+  const portals = [
+    {
+      title: 'Admin',
+      icon: Shield,
+      description: 'Manage your healthcare system',
+      path: '/dashboard',
+      gradient: 'from-purple-600 to-purple-800',
+      textColor: 'text-purple-700'
+    },
+    {
+      title: 'Pharmacy',
+      icon: Pill,
+      description: 'Browse and order medications',
+      path: '/pharmacy',
+      gradient: 'from-teal-600 to-teal-800',
+      textColor: 'text-teal-700'
+    },
+    {
+      title: 'Doctor',
+      icon: Stethoscope,
+      description: 'Patient care and consultations',
+      path: '/doctor',
+      gradient: 'from-blue-600 to-blue-800',
+      textColor: 'text-blue-700'
+    },
+    {
+      title: 'Labs',
+      icon: FlaskConical,
+      description: 'Test results and diagnostics',
+      path: '/labs',
+      gradient: 'from-green-600 to-green-800',
+      textColor: 'text-green-700'
+    },
+    {
+      title: 'Blood Bank',
+      icon: Droplet,
+      description: 'Blood inventory management',
+      path: '/bloodbank',
+      gradient: 'from-red-600 to-red-800',
+      textColor: 'text-red-700'
+    },
+    {
+      title: 'Ambulance',
+      icon: Ambulance,
+      description: 'Emergency services dispatch',
+      path: '/ambulance',
+      gradient: 'from-orange-600 to-orange-800',
+      textColor: 'text-orange-700'
+    },
+    {
+      title: 'Hospital',
+      icon: Building2,
+      description: 'Hospital management system',
+      path: '/hospital',
+      gradient: 'from-indigo-600 to-indigo-800',
+      textColor: 'text-indigo-700'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-6">
-      <div className="max-w-5xl w-full">
+      <div className="max-w-6xl w-full">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold text-white mb-4">
+        <div className="text-center mb-10">
+          <h1 className="text-5xl font-bold text-white mb-3">
             Welcome
           </h1>
           <p className="text-gray-400 text-lg">
@@ -20,55 +79,35 @@ export default function LandingPage() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Admin Card */}
-          <div
-            onClick={() => navigate('/dashboard')}
-            className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-12 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group"
-          >
-            <div className="flex flex-col items-center text-center space-y-6">
-              <div className="p-8 rounded-full bg-white/20 group-hover:bg-white/30 transition-all duration-300">
-                <Shield size={64} className="text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {portals.map((portal) => (
+            <div
+              key={portal.path}
+              onClick={() => navigate(portal.path)}
+              className={`bg-gradient-to-br ${portal.gradient} rounded-xl p-8 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group`}
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-6 rounded-full bg-white/20 group-hover:bg-white/30 transition-all duration-300">
+                  <portal.icon size={48} className="text-white" />
+                </div>
+                
+                <h2 className="text-2xl font-bold text-white">{portal.title}</h2>
+                
+                <p className="text-white/80 text-sm">
+                  {portal.description}
+                </p>
+                
+                <button className={`mt-4 px-6 py-2 bg-white ${portal.textColor} rounded-lg font-semibold text-sm transition-all duration-300 hover:bg-white/90 hover:shadow-lg`}>
+                  Open Portal
+                </button>
               </div>
-              
-              <h2 className="text-4xl font-bold text-white">Admin</h2>
-              
-              <p className="text-white/80 text-lg">
-                Access the complete admin dashboard to manage your pharmacy system
-              </p>
-              
-              <button className="mt-6 px-8 py-3 bg-white text-purple-700 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-white/90 hover:shadow-lg">
-                Open Dashboard
-              </button>
             </div>
-          </div>
-
-          {/* Pharmacy Card */}
-          <div
-            onClick={() => navigate('/pharmacy')}
-            className="bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl p-12 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl group"
-          >
-            <div className="flex flex-col items-center text-center space-y-6">
-              <div className="p-8 rounded-full bg-white/20 group-hover:bg-white/30 transition-all duration-300">
-                <Pill size={64} className="text-white" />
-              </div>
-              
-              <h2 className="text-4xl font-bold text-white">Pharmacy</h2>
-              
-              <p className="text-white/80 text-lg">
-                Browse products, place orders, and manage your pharmacy needs
-              </p>
-              
-              <button className="mt-6 px-8 py-3 bg-white text-teal-700 rounded-lg font-bold text-lg transition-all duration-300 hover:bg-white/90 hover:shadow-lg">
-                Visit Store
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12 text-gray-500 text-sm">
-          <p>© 2024 Pharmacy Management System</p>
+        <div className="text-center mt-10 text-gray-500 text-sm">
+          <p>© 2024 Healthcare Management System</p>
         </div>
       </div>
     </div>
