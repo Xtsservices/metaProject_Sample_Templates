@@ -7,133 +7,133 @@ import Footer from './Footer3';
 const Services: React.FC = () => {
   const services = [
     {
-      icon: '🦷',
-      title: 'General Dentistry',
-      description: 'Comprehensive dental care for the whole family including preventive treatments',
+      icon: '🦴',
+      title: 'Joint Replacement Surgery',
+      description: 'Advanced hip, knee, and shoulder replacement using minimally invasive techniques',
       features: [
-        'Regular Dental Checkups',
-        'Professional Teeth Cleanings',
-        'Cavity Fillings & Repairs',
-        'Oral Health Examinations',
-        'X-Rays & Diagnostics',
-        'Fluoride Treatments'
+        'Total Hip Replacement',
+        'Total Knee Replacement',
+        'Shoulder Replacement',
+        'Revision Surgery',
+        'Computer-Assisted Surgery',
+        'Rapid Recovery Protocols'
       ],
-      price: 'From $89',
-      duration: '45-60 minutes',
-      gradient: 'from-blue-100 to-blue-200'
+      price: 'From $25,000',
+      duration: '2-4 hours',
+      gradient: 'from-slate-100 to-slate-200'
     },
     {
-      icon: '✨',
-      title: 'Cosmetic Dentistry',
-      description: 'Enhance your smile with our advanced cosmetic dental treatments',
+      icon: '⚽',
+      title: 'Sports Medicine',
+      description: 'Comprehensive treatment for athletic injuries and performance optimization',
       features: [
-        'Porcelain Veneers',
-        'Dental Bonding',
-        'Smile Makeovers',
-        'Gum Contouring',
-        'Crown Lengthening',
-        'Tooth Reshaping'
+        'ACL Reconstruction',
+        'Meniscus Repair',
+        'Rotator Cuff Surgery',
+        'Arthroscopic Procedures',
+        'Sports Physical Therapy',
+        'Return-to-Play Programs'
       ],
-      price: 'From $299',
-      duration: '1-3 visits',
-      gradient: 'from-purple-100 to-purple-200'
+      price: 'From $8,500',
+      duration: '1-3 hours',
+      gradient: 'from-gray-100 to-gray-200'
     },
     {
-      icon: '🌟',
-      title: 'Teeth Whitening',
-      description: 'Professional whitening treatments for a brighter, more confident smile',
+      icon: '🔬',
+      title: 'Minimally Invasive Surgery',
+      description: 'Advanced arthroscopic and endoscopic procedures for faster recovery',
       features: [
-        'In-Office Whitening',
-        'Take-Home Kits',
-        'Laser Whitening',
-        'Custom Whitening Trays',
-        'Deep Stain Removal',
-        'Maintenance Programs'
+        'Arthroscopic Joint Surgery',
+        'Endoscopic Spine Surgery',
+        'Small Incision Techniques',
+        'Reduced Scarring',
+        'Faster Recovery Times',
+        'Same-Day Procedures'
       ],
-      price: 'From $399',
+      price: 'From $12,000',
       duration: '1-2 hours',
-      gradient: 'from-amber-100 to-amber-200'
+      gradient: 'from-stone-100 to-stone-200'
     },
     {
-      icon: '🔧',
-      title: 'Dental Implants',
-      description: 'Permanent solution for missing teeth that looks and feels natural',
+      icon: '🏥',
+      title: 'Spine Surgery',
+      description: 'Expert treatment for spinal conditions and degenerative disorders',
       features: [
-        'Single Tooth Implants',
-        'Multiple Implants',
-        'All-on-4 Treatment',
-        'Bone Grafting',
-        'Implant Restoration',
-        'Full Arch Replacement'
+        'Lumbar Fusion Surgery',
+        'Cervical Disc Replacement',
+        'Spinal Decompression',
+        'Scoliosis Correction',
+        'Minimally Invasive Techniques',
+        'Non-Surgical Options'
       ],
-      price: 'From $1,500',
-      duration: '3-6 months',
-      gradient: 'from-teal-100 to-teal-200'
+      price: 'From $35,000',
+      duration: '3-6 hours',
+      gradient: 'from-zinc-100 to-zinc-200'
     },
     {
-      icon: '😁',
-      title: 'Orthodontics',
-      description: 'Straighten your teeth with modern braces or clear aligners',
+      icon: '🚑',
+      title: 'Trauma & Emergency Care',
+      description: 'Immediate treatment for fractures, dislocations, and traumatic injuries',
       features: [
-        'Traditional Metal Braces',
-        'Clear Ceramic Braces',
-        'Invisalign Clear Aligners',
-        'Retainers & Maintenance',
-        'Adult Orthodontics',
-        'Early Intervention'
+        'Fracture Repair',
+        'Emergency Surgery',
+        'Polytrauma Management',
+        'Complex Reconstructions',
+        '24/7 Availability',
+        'Multidisciplinary Care'
       ],
-      price: 'From $3,500',
-      duration: '12-24 months',
-      gradient: 'from-pink-100 to-pink-200'
+      price: 'Emergency rates vary',
+      duration: 'Immediate care',
+      gradient: 'from-neutral-100 to-neutral-200'
     },
     {
-      icon: '🚨',
-      title: 'Emergency Dental Care',
-      description: 'Immediate treatment when you need it most, available same-day',
+      icon: '💪',
+      title: 'Physical Rehabilitation',
+      description: 'Comprehensive therapy programs for optimal recovery and mobility',
       features: [
-        'Same-Day Appointments',
-        'Severe Pain Relief',
-        'Broken Tooth Repair',
-        'Emergency Extractions',
-        'Lost Crown/Filling',
-        '24/7 Emergency Support'
+        'Post-Surgical Rehabilitation',
+        'Sports Conditioning',
+        'Pain Management',
+        'Strength Training',
+        'Movement Analysis',
+        'Home Exercise Programs'
       ],
-      price: 'From $150',
-      duration: 'Same day service',
-      gradient: 'from-red-100 to-red-200'
+      price: 'From $150/session',
+      duration: '6-12 weeks',
+      gradient: 'from-slate-200 to-slate-300'
     }
   ];
 
   const additionalServices = [
     {
-      icon: '🦴',
-      title: 'Root Canal Therapy',
-      description: 'Save infected teeth with gentle, effective endodontic treatment'
-    },
-    {
-      icon: '👑',
-      title: 'Dental Crowns & Bridges',
-      description: 'Restore damaged or missing teeth with custom prosthetics'
-    },
-    {
-      icon: '💎',
-      title: 'Dentures',
-      description: 'Complete or partial dentures for a natural-looking smile'
-    },
-    {
-      icon: '👶',
-      title: 'Pediatric Dentistry',
-      description: 'Gentle, specialized dental care for children of all ages'
-    },
-    {
       icon: '🩺',
-      title: 'Periodontal Treatment',
-      description: 'Comprehensive care for gum disease and oral health'
+      title: 'Diagnostic Imaging',
+      description: 'Advanced MRI, CT scans, and X-rays for accurate diagnosis'
     },
     {
-      icon: '⚕️',
-      title: 'Oral Surgery',
-      description: 'Expert surgical procedures including wisdom teeth removal'
+      icon: '💉',
+      title: 'Injection Therapy',
+      description: 'Steroid injections and PRP therapy for pain management'
+    },
+    {
+      icon: '🔧',
+      title: 'Hardware Removal',
+      description: 'Safe removal of surgical implants and fixation devices'
+    },
+    {
+      icon: '👥',
+      title: 'Second Opinions',
+      description: 'Comprehensive consultation for treatment planning'
+    },
+    {
+      icon: '📋',
+      title: 'Pre-Surgical Planning',
+      description: 'Detailed surgical planning using 3D imaging technology'
+    },
+    {
+      icon: '🏃‍♂️',
+      title: 'Performance Analysis',
+      description: 'Movement analysis and biomechanical assessment'
     }
   ];
 
@@ -141,22 +141,22 @@ const Services: React.FC = () => {
     {
       number: '01',
       title: 'Initial Consultation',
-      description: 'We discuss your concerns, goals, and create a personalized treatment plan tailored to your needs.'
+      description: 'Comprehensive evaluation of your condition, medical history, and treatment goals with Dr. Johnson.'
     },
     {
       number: '02',
-      title: 'Comprehensive Exam',
-      description: 'Thorough examination including digital X-rays, diagnostic tests, and oral health assessment.'
+      title: 'Diagnostic Imaging',
+      description: 'Advanced MRI, CT scans, or X-rays to accurately diagnose your orthopedic condition.'
     },
     {
       number: '03',
       title: 'Treatment Planning',
-      description: 'We explain all options, costs, timeline, and expected outcomes clearly and transparently.'
+      description: 'Personalized treatment plan with surgical and non-surgical options, timeline, and expected outcomes.'
     },
     {
       number: '04',
-      title: 'Quality Care Delivery',
-      description: 'Receive expert treatment in our comfortable, modern facility with cutting-edge technology.'
+      title: 'Expert Treatment',
+      description: 'State-of-the-art surgical procedures or conservative treatment in our modern facility.'
     }
   ];
 
@@ -165,13 +165,13 @@ const Services: React.FC = () => {
       <Header />
       <div className="bg-white pt-32">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-r from-teal-50 via-white to-cyan-50">
+        <section className="py-20 bg-gradient-to-r from-gray-50 via-white to-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Our <span className="text-teal-600">Services</span>
+              Our <span className="text-slate-900">Specialties</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive dental solutions tailored to your unique needs. From preventive care to advanced treatments, we're here to help you achieve your best smile.
+              Advanced orthopedic treatments tailored to your unique needs. From joint replacement to sports medicine, we provide comprehensive care to restore your mobility.
             </p>
           </div>
         </section>
@@ -180,16 +180,16 @@ const Services: React.FC = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-teal-600 font-semibold uppercase tracking-wide text-sm">Featured Services</span>
+              <span className="text-slate-900 font-semibold uppercase tracking-wide text-sm">Featured Services</span>
               <h2 className="mt-4 text-4xl font-bold text-slate-900">
-                Complete Dental Care Solutions
+                Complete Orthopedic Care Solutions
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <div 
                   key={index} 
-                  className="bg-white border-2 border-slate-100 rounded-2xl overflow-hidden hover:border-teal-600 hover:shadow-2xl transition-all duration-300 group"
+                  className="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden hover:border-slate-900 hover:shadow-2xl transition-all duration-300 group"
                 >
                   <div className={`bg-gradient-to-br ${service.gradient} p-8`}>
                     <div className="text-6xl mb-4">{service.icon}</div>
@@ -202,7 +202,7 @@ const Services: React.FC = () => {
                       <ul className="space-y-3">
                         {service.features.map((feature, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+                            <Check className="w-5 h-5 text-slate-900 flex-shrink-0 mt-0.5" />
                             <span className="text-slate-700">{feature}</span>
                           </li>
                         ))}
@@ -210,19 +210,19 @@ const Services: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-4 mb-6 pb-6 border-b border-slate-200">
                       <div className="flex items-center gap-2 text-sm text-slate-600">
-                        <DollarSign className="w-4 h-4 text-teal-600" />
+                        <DollarSign className="w-4 h-4 text-slate-900" />
                         <span className="font-semibold">{service.price}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-slate-600">
-                        <Clock className="w-4 h-4 text-teal-600" />
+                        <Clock className="w-4 h-4 text-slate-900" />
                         <span>{service.duration}</span>
                       </div>
                     </div>
                     <Link 
                       to="/doctor/appointment" 
-                      className="block w-full py-3 bg-teal-600 text-white rounded-full text-center font-medium hover:bg-teal-700 transition-all group-hover:scale-105"
+                      className="block w-full py-3 bg-slate-900 text-white rounded-full text-center font-medium hover:bg-slate-800 transition-all group-hover:scale-105"
                     >
-                      Book This Service
+                      Book Consultation
                     </Link>
                   </div>
                 </div>
@@ -235,21 +235,21 @@ const Services: React.FC = () => {
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-teal-600 font-semibold uppercase tracking-wide text-sm">More Services</span>
+              <span className="text-slate-900 font-semibold uppercase tracking-wide text-sm">Additional Services</span>
               <h2 className="mt-4 text-4xl font-bold text-slate-900">
-                Additional Dental Care Options
+                Comprehensive Orthopedic Support
               </h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {additionalServices.map((service, index) => (
                 <div 
                   key={index} 
-                  className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-slate-100"
+                  className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-slate-200"
                 >
                   <div className="text-5xl mb-4">{service.icon}</div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
                   <p className="text-slate-600 mb-4 leading-relaxed">{service.description}</p>
-                  <Link to="/doctor/appointment" className="inline-flex items-center gap-2 text-teal-600 font-semibold hover:gap-4 transition-all">
+                  <Link to="/doctor/appointment" className="inline-flex items-center gap-2 text-slate-900 font-semibold hover:gap-4 transition-all">
                     Learn More
                     <ArrowRight className="w-5 h-5" />
                   </Link>
@@ -263,26 +263,26 @@ const Services: React.FC = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-teal-600 font-semibold uppercase tracking-wide text-sm">Our Process</span>
+              <span className="text-slate-900 font-semibold uppercase tracking-wide text-sm">Our Process</span>
               <h2 className="mt-4 text-4xl font-bold text-slate-900">
-                How We Care for You
+                Your Journey to Recovery
               </h2>
               <p className="mt-4 text-xl text-slate-600 max-w-3xl mx-auto">
-                From your first visit to ongoing care, we make the process simple, comfortable, and transparent.
+                From diagnosis to recovery, we guide you through every step with expert care and personalized attention.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {processSteps.map((step, index) => (
                 <div key={index} className="relative">
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-teal-600 to-cyan-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 shadow-lg">
+                    <div className="w-20 h-20 bg-slate-900 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 shadow-lg">
                       {step.number}
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
                     <p className="text-slate-600 leading-relaxed">{step.description}</p>
                   </div>
                   {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-teal-600 to-cyan-600"></div>
+                    <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-slate-900"></div>
                   )}
                 </div>
               ))}
@@ -295,46 +295,46 @@ const Services: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <span className="text-teal-600 font-semibold uppercase tracking-wide text-sm">Advanced Technology</span>
-                <h2 className="text-4xl font-bold text-slate-900">State-of-the-Art Dental Equipment</h2>
+                <span className="text-slate-900 font-semibold uppercase tracking-wide text-sm">Advanced Technology</span>
+                <h2 className="text-4xl font-bold text-slate-900">State-of-the-Art Surgical Equipment</h2>
                 <p className="text-slate-600 leading-relaxed">
-                  We invest in the latest dental technology to provide you with more accurate diagnoses, more comfortable treatments, and better results for your oral health.
+                  We utilize the latest orthopedic technology to provide precise diagnoses, minimally invasive procedures, and optimal surgical outcomes for every patient.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
-                    <Check className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1" />
+                    <Check className="w-6 h-6 text-slate-900 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Digital X-Rays</h4>
-                      <p className="text-slate-600 text-sm">90% less radiation and instant results for faster diagnosis and treatment planning.</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">3D Imaging & Navigation</h4>
+                      <p className="text-slate-600 text-sm">Precise surgical planning with computer-assisted navigation for optimal implant positioning.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
-                    <Check className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1" />
+                    <Check className="w-6 h-6 text-slate-900 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Intraoral Cameras</h4>
-                      <p className="text-slate-600 text-sm">See what we see with detailed images of your teeth and gums on screen.</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">Robotic Surgery Systems</h4>
+                      <p className="text-slate-600 text-sm">Enhanced precision in joint replacement with robotic-assisted surgical technology.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
-                    <Check className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1" />
+                    <Check className="w-6 h-6 text-slate-900 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">Laser Dentistry</h4>
-                      <p className="text-slate-600 text-sm">Minimally invasive procedures with faster healing times and less discomfort.</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">Arthroscopic Equipment</h4>
+                      <p className="text-slate-600 text-sm">Minimally invasive procedures with high-definition cameras and specialized instruments.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
-                    <Check className="w-6 h-6 text-teal-600 flex-shrink-0 mt-1" />
+                    <Check className="w-6 h-6 text-slate-900 flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">3D Imaging</h4>
-                      <p className="text-slate-600 text-sm">Precise treatment planning for implants and complex dental procedures.</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">Advanced Prosthetics</h4>
+                      <p className="text-slate-600 text-sm">Latest generation implants designed for durability and natural movement.</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-teal-100 to-cyan-100 rounded-3xl overflow-hidden shadow-2xl">
+                <div className="aspect-square bg-gradient-to-br from-slate-100 to-gray-200 rounded-3xl overflow-hidden shadow-2xl">
                   <div className="w-full h-full flex items-center justify-center text-9xl">
-                    🔬
+                    🤖
                   </div>
                 </div>
               </div>
@@ -343,18 +343,18 @@ const Services: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-teal-600 to-cyan-600 text-white">
+        <section className="py-20 bg-slate-900 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-teal-50 mb-8 max-w-2xl mx-auto">
-              Schedule your appointment today and experience the difference quality dental care can make in your life.
+            <h2 className="text-4xl font-bold mb-6">Ready to Restore Your Mobility?</h2>
+            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+              Schedule your consultation today and take the first step toward getting back to the activities you love.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link 
                 to="/doctor/appointment" 
-                className="px-8 py-4 bg-white text-teal-600 rounded-full hover:bg-slate-50 transition-all duration-300 font-medium text-lg shadow-xl inline-flex items-center gap-2"
+                className="px-8 py-4 bg-white text-slate-900 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium text-lg shadow-xl inline-flex items-center gap-2"
               >
-                Book an Appointment
+                Book Consultation
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link 
