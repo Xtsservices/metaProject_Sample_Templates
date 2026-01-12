@@ -5,6 +5,9 @@ import LandingPage from './components/LandingPage'
 import HospitalLanding from './components/Landing/Hospital/Landing'
 import PharmacyHome from './components/pharmacy/PharmacyHome'
 import PharmacyAbout from './components/pharmacy/PharmacyAbout';
+import PharmacyContact from './components/pharmacy/PharmacyContact';
+import BloodBankHome from './components/BloodBank/BloodBankHome';
+// import BloodBankAbout from './components/BloodBank/BloodBankAbout';
 // import AboutUs from './components/pharmacy/AboutUs'
 import Layout from './components/Layout'
 import PharmacyDashboard from './components/dashboards/Dashboard'
@@ -55,6 +58,7 @@ function App() {
         <Route path="/pharmacy">
           <Route index element={<PharmacyHome />} />
           <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
+         <Route path="/pharmacy/contact" element={<PharmacyContact />} />
         </Route>
 
         {/* --- NEW: Doctor landing (mirror ambulance style) --- */}
@@ -65,6 +69,10 @@ function App() {
           <Route path="/doctor/contact" element={<DoctorContact />} />
           <Route path="/doctor/appointment" element={<DoctorAppointment />} />
           {/* add more if needed */}
+        </Route>
+        <Route path="/bloodbank" >
+        <Route index  element={<BloodBankHome/>} />
+        {/* <Route path="/bloodbank/about" element={<BloodBankAbout />} /> */}
         </Route>
 
         {/* All Dashboard Routes with Layout */}

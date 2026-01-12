@@ -20,12 +20,12 @@ export default function PharmacyHeader() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Home</a>
+            <a href="/pharmacy" className="text-gray-700 hover:text-teal-600 font-medium">Home</a>
             <a href="/pharmacy/about-us" className="text-gray-700 hover:text-teal-600 font-medium">About Us</a>
             {/* <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Shop</a>
             <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Doctors</a>
             <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Articles</a> */}
-            <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Contact Us</a>
+            <a href="/pharmacy/contact" className="text-gray-700 hover:text-teal-600 font-medium">Contact Us</a>
           </nav>
 
           {/* Search Bar - Desktop */}
@@ -67,12 +67,12 @@ export default function PharmacyHeader() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t">
             <nav className="flex flex-col space-y-3">
-              <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Home</a>
+              <a href="/pharmacy" className="text-gray-700 hover:text-teal-600 font-medium">Home</a>
               <a href="/pharmacy/about-us" className="text-gray-700 hover:text-teal-600 font-medium">About Us</a>
               {/* <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Shop</a>
               <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Doctors</a>
               <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Articles</a> */}
-              <a href="#" className="text-gray-700 hover:text-teal-600 font-medium">Contact Us</a>
+              <a href="/pharmacy/contact" className="text-gray-700 hover:text-teal-600 font-medium">Contact Us</a>
             </nav>
 
             {/* Mobile Search */}
