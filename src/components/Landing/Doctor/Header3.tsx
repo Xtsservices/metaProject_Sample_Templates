@@ -27,22 +27,22 @@ const Header: React.FC = () => {
       isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       {/* Top Bar */}
-      <div className="bg-teal-600 text-white py-2">
+      <div className="bg-slate-900 text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-between items-center text-sm">
             <div className="hidden lg:flex items-center gap-2">
-              <a href="tel:+18001234567" className="flex items-center gap-2 text-white hover:text-teal-100 transition">
+              <a href="tel:+18001234567" className="flex items-center gap-2 text-white hover:text-slate-300 transition">
                 <Phone className="w-4 h-4 text-white" />
                 <span>+1 (800) 123-4567</span>
               </a>
-              <a href="mailto:info@dentalcare.com" className="hidden md:flex items-center gap-2 text-white hover:text-teal-100 transition">
+              <a href="mailto:info@orthopediccare.com" className="hidden md:flex items-center gap-2 text-white hover:text-slate-300 transition">
                 <Mail className="w-4 h-4 text-white" />
-                <span>info@dentalcare.com</span>
+                <span>info@orthopediccare.com</span>
               </a>
             </div>
             <div className="hidden lg:flex items-center gap-2">
               <Clock className="w-4 h-4" />
-              <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+              <span>Mon - Fri: 8:00 AM - 5:00 PM | Emergency 24/7</span>
             </div>
           </div>
         </div>
@@ -54,12 +54,12 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/doctor" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                D
+              <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                O
               </div>
               <div>
-                <div className="text-xl font-bold text-slate-900">DentalCare</div>
-                <div className="text-xs text-teal-600">Perfect Smiles</div>
+                <div className="text-xl font-bold text-slate-900">OrthoExpert</div>
+                <div className="text-xs text-slate-600">Dr. Michael Johnson, MD</div>
               </div>
             </Link>
 
@@ -71,8 +71,8 @@ const Header: React.FC = () => {
                   to={link.path}
                   className={`font-medium transition-colors ${
                     location.pathname === link.path
-                      ? 'text-teal-600'
-                      : 'text-slate-700 hover:text-teal-600'
+                      ? 'text-slate-900'
+                      : 'text-slate-700 hover:text-slate-900'
                   }`}
                 >
                   {link.label}
@@ -84,9 +84,9 @@ const Header: React.FC = () => {
             <div className="hidden lg:block">
               <Link
                 to="/doctor/appointment"
-                className="px-6 py-3 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition-all duration-300 font-medium shadow-lg hover:shadow-xl"
+                className="px-6 py-3 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-all duration-300 font-medium shadow-lg hover:shadow-xl"
               >
-                Book Appointment
+                Schedule Consultation
               </Link>
             </div>
 
@@ -109,8 +109,8 @@ const Header: React.FC = () => {
                     to={link.path}
                     className={`font-medium transition-colors ${
                       location.pathname === link.path
-                        ? 'text-teal-600'
-                        : 'text-slate-700 hover:text-teal-600'
+                        ? 'text-slate-900'
+                        : 'text-slate-700 hover:text-slate-900'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -119,10 +119,10 @@ const Header: React.FC = () => {
                 ))}
                 <Link
                   to="/doctor/appointment"
-                  className="px-6 py-3 bg-teal-600 text-white rounded-full text-center hover:bg-teal-700 transition-all duration-300 font-medium"
+                  className="px-6 py-3 bg-slate-900 text-white rounded-full text-center hover:bg-slate-800 transition-all duration-300 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Book Appointment
+                  Schedule Consultation
                 </Link>
               </div>
             </div>
