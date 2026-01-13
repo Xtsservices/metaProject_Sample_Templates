@@ -1,5 +1,4 @@
-// src/App.tsx
-
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import HospitalLanding from './components/Landing/Hospital/Landing'
@@ -58,10 +57,13 @@ import DoctorAbout from './components/Landing/Doctor/About3'
 import DoctorContact from './components/Landing/Doctor/Contact3'         // new
 import DoctorAppointment from './components/Landing/Doctor/Appointment3' // new
 import './App.css'
+import Header from './components/Header'
 
 
 
 function App() {
+  const [isOpen, setIsOpen] = useState(true)
+
   return (
     <Router>
       <Routes>
