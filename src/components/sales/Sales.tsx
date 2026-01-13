@@ -323,14 +323,14 @@ const Sales: React.FC = () => {
  
                {/* Rows for each time (y-axis) */}
                <div className="space-y-2">
-                 {times.map((hour, rIndex) => (
+                 {times.map((hour, ) => (
                    <div key={hour} className="flex items-center gap-2">
                      <div className="w-12 text-xs text-slate-600 font-medium">{hour}</div>
                      <div
                        className="flex-1 grid gap-2"
                        style={{ gridTemplateColumns: `repeat(${orderTimeData.length}, minmax(0, 1fr))` }}
                      >
-                       {orderTimeData.map((day, cIndex) => {
+                       {orderTimeData.map((day,) => {
                          const slot = day.times.find(t => t.hour === hour);
                          const color = slot?.color || 'bg-blue-100';
                          const value = slot?.value ?? 0;

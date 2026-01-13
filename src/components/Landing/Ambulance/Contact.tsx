@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Ambulance, Phone, Clock, MapPin, Mail, Send, MessageSquare, CheckCircle } from 'lucide-react';
+import { Ambulance, Phone, Clock, MapPin, Mail, Send, CheckCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
