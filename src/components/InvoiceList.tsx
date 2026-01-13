@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, FileText, FileSpreadsheet, File, Printer, Eye, Trash2, MoreVertical } from 'lucide-react';
+import { Eye, Trash2, MoreVertical } from 'lucide-react';
 
 interface Invoice {
   id: string;
@@ -16,7 +16,6 @@ interface Invoice {
 
 const InvoiceList: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
 
   const invoices: Invoice[] = [
     { id: '#0013', period: 'November 2017', issuedTo: 'Liam', paymentMethod: 'Wire transfer', status: 'Pending', issueDate: 'February 25, 2018', dueDate: null, dueDateLabel: 'Paid on Feb 15, 2018', amount: 885, vat: 124 },
@@ -157,7 +156,7 @@ const InvoiceList: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {invoices.map((invoice, index) => (
+                    {invoices.map((invoice, ) => (
                       <tr key={invoice.id} className="border-b border-gray-100 hover:bg-gray-50">
                         <td className="py-4 px-4 text-sm text-blue-600 font-medium">{invoice.id}</td>
                         <td className="py-4 px-4 text-sm text-gray-700">{invoice.period}</td>

@@ -32,12 +32,25 @@ import Support from './components/support/Support'
 import Invoice from './components/Invoice'
 import InvoiceList from './components/InvoiceList'
 import LabsLanding from './components/Landing/Labs/LabsLanding'
+import { Home as Labs2Home } from './components/Landing/Labs2/Home'
+import { About as Labs2About } from './components/Landing/Labs2/About'
+import { Patients as Labs2Patients } from './components/Landing/Labs2/Patients'
+import { Pages as Labs2Pages } from './components/Landing/Labs2/Pages'
+import { Contact as Labs2Contact } from './components/Landing/Labs2/Contact'
+import { Clinicians as Labs2Clinicians } from './components/Landing/Labs2/Clinicians'
+import { Blog as Labs2Blog } from './components/Landing/Labs2/Blog'
 import AmbulanceHome from './components/Landing/Ambulance/Home'
 import AmbulanceServices from './components/Landing/Ambulance/Services'
 import AmbulanceTeam from './components/Landing/Ambulance/Team'
 import AmbulanceContact from './components/Landing/Ambulance/Contact'
 import AmbulanceAbout from './components/Landing/Ambulance/About'
-
+import { HomePage as Ambulance2Home } from './components/Landing/Ambulance2/Home'
+import { PatientsPage as Ambulance2Patients } from './components/Landing/Ambulance2/Patients'
+import { PagesPage as Ambulance2Pages } from './components/Landing/Ambulance2/Pages'
+import { ContactPage as Ambulance2Contact } from './components/Landing/Ambulance2/Contact'
+import { CliniciansPage as Ambulance2Clinicians } from './components/Landing/Ambulance2/Clinicians'
+import { BlogPage as Ambulance2Blog } from './components/Landing/Ambulance2/Blog'
+import { AboutPage as Ambulance2About } from './components/Landing/Ambulance2/About'
 // --- NEW: Doctor landing & pages ---
 import DoctorHome from './components/Landing/Doctor/Home3'
 import DoctorServices from './components/Landing/Doctor/Services3'
@@ -55,6 +68,13 @@ function App() {
         {/* Landing Page - Role Selection (No Layout) */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/labs" element={<LabsLanding />} />
+        <Route path="/labs2" element={<Labs2Home />} />
+        <Route path="/labs2/about" element={<Labs2About />} />
+        <Route path="/labs2/patients" element={<Labs2Patients />} />
+        <Route path="/labs2/pages" element={<Labs2Pages />} />
+        <Route path="/labs2/contact" element={<Labs2Contact />} />
+        <Route path="/labs2/clinicians" element={<Labs2Clinicians />} />
+        <Route path="/labs2/blog" element={<Labs2Blog />} />
         <Route path="/hospital" element={<HospitalLanding />} />
 
         {/* Ambulance (existing) */}
@@ -64,6 +84,17 @@ function App() {
           <Route path="/ambulance/team" element={<AmbulanceTeam />} />
           <Route path="/ambulance/contact" element={<AmbulanceContact />} />
           <Route path="/ambulance/about" element={<AmbulanceAbout />} />
+        </Route>
+
+        {/* Ambulance2 (new) */}
+        <Route path="/ambulance2">
+          <Route index element={<Ambulance2Home />} />
+          <Route path="/ambulance2/patients" element={<Ambulance2Patients />} />
+          <Route path="/ambulance2/pages" element={<Ambulance2Pages />} />
+          <Route path="/ambulance2/contact" element={<Ambulance2Contact />} />
+          <Route path="/ambulance2/clinicians" element={<Ambulance2Clinicians />} />
+          <Route path="/ambulance2/blog" element={<Ambulance2Blog />} />
+          <Route path="/ambulance2/about" element={<Ambulance2About />} />
         </Route>
 
         {/* Pharmacy (existing) */}

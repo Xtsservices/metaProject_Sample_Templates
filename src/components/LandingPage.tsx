@@ -40,6 +40,14 @@ export default function LandingPage() {
       textColor: 'text-green-700'
     },
     {
+      title: 'Labs2',
+      icon: FlaskConical,
+      description: 'Alternate labs portal',
+      path: '/labs2',
+      gradient: 'from-emerald-600 to-emerald-800',
+      textColor: 'text-emerald-700'
+    },
+    {
       title: 'Blood Bank',
       icon: Droplet,
       description: 'Blood inventory management',
@@ -54,6 +62,14 @@ export default function LandingPage() {
       path: '/ambulance',
       gradient: 'from-orange-600 to-orange-800',
       textColor: 'text-orange-700'
+    },
+    {
+      title: 'Ambulance2',
+      icon: Ambulance,
+      description: 'Alternate ambulance portal',
+      path: '/ambulance2',
+      gradient: 'from-rose-600 to-rose-800',
+      textColor: 'text-rose-700'
     },
     {
       title: 'Hospital',

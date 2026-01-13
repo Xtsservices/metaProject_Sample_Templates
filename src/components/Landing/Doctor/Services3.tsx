@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, ArrowRight, Clock, DollarSign, Star } from 'lucide-react';
+import { Check, ArrowRight, Clock, DollarSign } from 'lucide-react';
 import Header from './Header3';
 import Footer from './Footer3';
 

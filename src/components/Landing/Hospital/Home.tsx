@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Check, Star, Calendar, Users, Award, Heart, Smile, Shield, Sparkles, ChevronRight, Play } from 'lucide-react';
+import { Phone, Check, Star, Heart, Smile, Shield, Sparkles, ChevronRight, Play } from 'lucide-react';
 
 const Home: React.FC = () => {
   const stats = [

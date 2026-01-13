@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Ambulance, Phone, Clock, Heart, Shield, Plane, Users, Activity, Stethoscope, CheckCircle, ChevronRight } from 'lucide-react';
+import { Ambulance, Phone, Clock, Heart, Plane, Users, Activity, Stethoscope, CheckCircle, ChevronRight } from 'lucide-react';
 
 const Services: React.FC = () => {
   const mainServices = [

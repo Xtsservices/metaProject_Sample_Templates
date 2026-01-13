@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TrendingUp, Users, ShoppingCart, Eye, FileText, Share2, MoreVertical } from 'lucide-react';
 
 const PharmacyDashboard = () => {
@@ -40,7 +40,7 @@ const PharmacyDashboard = () => {
     }
   };
 
-  const [statusFilter, setStatusFilter] = useState<'All' | 'Delivered' | 'Pending'>('All');
+  const [statusFilter, ] = useState<'All' | 'Delivered' | 'Pending'>('All');
   const filteredOrders = orders.filter(o => statusFilter === 'All' ? true : o.status === statusFilter);
 
   const maxSales = Math.max(...salesData.map(d => d.value));

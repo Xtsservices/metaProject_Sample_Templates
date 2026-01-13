@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Ambulance, Phone, Clock, Award, Heart, Star, Mail, Linkedin, Facebook, Twitter } from 'lucide-react';
+import { Ambulance, Phone, Clock, Award, Heart, Star, Mail } from 'lucide-react';
 
 const Team: React.FC = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('All');

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Award, Users, Heart, Shield, CheckCircle, Target, Eye, ArrowRight, Star, Stethoscope } from 'lucide-react';
+import { Award, Users, Heart, Shield, CheckCircle, ArrowRight, Star, Stethoscope } from 'lucide-react';
 import Header from './Header3';
 import Footer from './Footer3';
 
