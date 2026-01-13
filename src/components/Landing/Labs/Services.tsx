@@ -1,5 +1,5 @@
 import React from 'react';
-import { Beaker, Quote, Check } from 'lucide-react';
+import { Beaker, Quote } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
@@ -41,41 +41,6 @@ const Services: React.FC = () => {
     }
   ];
 
-  const pricingPlans = [
-    {
-      name: 'BASIC',
-      price: '$17',
-      period: '/Month',
-      description: 'An awesome description',
-      features: ['1 User', '1 Dashboard', '5 Projects'],
-      color: 'from-teal-400 to-cyan-500'
-    },
-    {
-      name: 'BUSINESS',
-      price: '$53',
-      period: '/Month',
-      description: 'An awesome description',
-      features: ['3 User', 'Unlimited Dashboards', '10 Projects', 'Custom CSS'],
-      color: 'from-cyan-500 to-blue-500',
-      featured: true
-    },
-    {
-      name: 'PREMIUM',
-      price: '$76',
-      period: '/Month',
-      description: 'An awesome description',
-      features: ['20 User', 'Unlimited Dashboards', '50 Projects', 'Custom CSS'],
-      color: 'from-blue-500 to-indigo-500'
-    },
-    {
-      name: 'ULTIMATE',
-      price: '$99',
-      period: '/Month',
-      description: 'An awesome description',
-      features: ['50 User', 'Unlimited Dashboard', '80 Projects', 'Custom CSS', 'Custom Domain'],
-      color: 'from-indigo-500 to-purple-500'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">

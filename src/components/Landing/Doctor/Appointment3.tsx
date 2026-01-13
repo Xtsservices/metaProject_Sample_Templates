@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header3';
 import Footer from './Footer3';
-import { Calendar, Clock, User, Phone, Mail, FileText } from 'lucide-react';
+import { Calendar, Clock, User, FileText } from 'lucide-react';
 
 const Appointment: React.FC = () => {
   const [form, setForm] = useState({ 

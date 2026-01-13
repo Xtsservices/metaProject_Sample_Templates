@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import {
   LayoutDashboard, 
   ShoppingCart,  
-  Settings,
   Menu,
   X,
   ChevronDown,
@@ -21,7 +20,7 @@ interface SidebarProps {
 
 const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
   const [isDashboardOpen, setIsDashboardOpen] = useState(true)
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  // const [isCollapsed, setIsCollapsed] = useState(false)
   const location = useLocation()
 
   // treat root '/' specially, otherwise match prefix for nested routes

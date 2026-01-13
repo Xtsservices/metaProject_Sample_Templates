@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Users, Package, Clock, XCircle, Eye, Download, Share2, TrendingUp, TrendingDown } from 'lucide-react';
 
 const Dashboard2 = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Ambulance, Phone, Clock, MapPin, Award, Users, Shield, Heart, CheckCircle, Star, ChevronRight, TrendingUp } from 'lucide-react';
+import { Ambulance, Phone, Clock, MapPin, Award, Users, Shield, Heart, CheckCircle, Star, ChevronRight } from 'lucide-react';
 
 const Home: React.FC = () => {
   const services = [
