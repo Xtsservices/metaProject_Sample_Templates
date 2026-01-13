@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage'
 import HospitalLanding from './components/Landing/Hospital/Landing'
@@ -57,7 +57,6 @@ import DoctorAbout from './components/Landing/Doctor/About3'
 import DoctorContact from './components/Landing/Doctor/Contact3'         // new
 import DoctorAppointment from './components/Landing/Doctor/Appointment3' // new
 import './App.css'
-import Header from './components/Header'
 
 
 
@@ -134,13 +133,27 @@ function App() {
         <Route path="/DoctorLanding2" element={<DoctorLanding2/>} />
         <Route path="/hospitalLanding2" element={<HospitalLanding2/>} />
 
-        {/* All Dashboard Routes with Layout */}
+        {/* Explicit admin/dashboard routes so Header/Layout mount on client navigation */}
+        <Route path="/dashboard" element={
+          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+            <PharmacyDashboard />
+          </Layout>
+        } />
+        <Route path="/dashboard2" element={
+          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+            <Dashboard2 />
+          </Layout>
+        } />
+        <Route path="/dashboard3" element={
+          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+            <Dashboard3 />
+          </Layout>
+        } />
+
+        {/* All Dashboard Routes with Layout (fallback for other dashboard-like routes) */}
         <Route path="/*" element={
-          <Layout>
+          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
             <Routes>
-              <Route path="/dashboard" element={<PharmacyDashboard />} />
-              <Route path="/dashboard2" element={<Dashboard2 />} />
-              <Route path="/dashboard3" element={<Dashboard3 />} />
               <Route path="/products" element={<Products />} />
               <Route path="/sales" element={<Sales />} />
               <Route path="/payments" element={<Payments />} />

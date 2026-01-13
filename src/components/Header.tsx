@@ -1,5 +1,5 @@
-import React from 'react'
-import { Search, Bell, Settings, Moon, MessageCircle, AtSign, Clipboard, Maximize2, Menu, X } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
+import { Search, Bell, Settings, Moon, MessageCircle, AtSign, Clipboard, Maximize2, Minimize2, Menu, X } from 'lucide-react'
 
 interface HeaderProps {
   isOpen?: boolean
@@ -7,6 +7,26 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
+  const [isFullScreen, setIsFullScreen] = useState(false)
+
+  useEffect(() => {
+    const handleChange = () => setIsFullScreen(!!document.fullscreenElement)
+    document.addEventListener('fullscreenchange', handleChange)
+    return () => document.removeEventListener('fullscreenchange', handleChange)
+  }, [])
+
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement) {
+      try {
+        await document.documentElement.requestFullscreen()
+      } catch {}
+    } else {
+      try {
+        await document.exitFullscreen()
+      } catch {}
+    }
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 h-16 flex items-center px-4">
       <div className="flex items-center gap-4 w-full">
@@ -58,9 +78,10 @@ const Header: React.FC<HeaderProps> = ({ isOpen, setIsOpen }) => {
           {/* fullscreen like the yellow square in the image */}
           <button
             className="p-2 rounded-md hover:opacity-90 bg-yellow-400 text-white flex items-center justify-center"
-            aria-label="Toggle fullscreen"
+            aria-label={isFullScreen ? "Exit fullscreen" : "Enter fullscreen"}
+            onClick={toggleFullscreen}
           >
-            <Maximize2 size={18} />
+            {isFullScreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
           </button>
 
           <button className="p-2 rounded-md hover:bg-gray-100" aria-label="Notifications"><Bell size={18} /></button>

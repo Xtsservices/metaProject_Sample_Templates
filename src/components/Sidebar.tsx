@@ -3,8 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import {
   LayoutDashboard, 
   ShoppingCart,  
-  Menu,
-  X,
   ChevronDown,
   Package,
   TrendingUp,
