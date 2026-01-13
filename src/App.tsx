@@ -10,8 +10,10 @@ import PharmacyLanding from './components/pharmacy2/PharmacyLanding';
 import PharmacyAbout2 from './components/pharmacy2/PharmacyAbout2';
 import PharmacyContact2 from './components/pharmacy2/PharmacyContact2';
 import BloodBankHome from './components/BloodBank/BloodBankHome';
+import HospitalLanding2 from './components/Hospital2/HospitalLanding2';
 // import BloodBankAbout from './components/BloodBank/BloodBankAbout';
 // import AboutUs from './components/pharmacy/AboutUs'
+import DoctorLanding2 from './components/Doctor2/DoctorLanding2';
 import BloodBankHome2 from './components/BloodBank2/BloodBankHome2';
 import BloodBankAbout2 from './components/BloodBank2/BloodBankAbout2';
 import BloodBankDonate2 from './components/BloodBank2/BloodBankDonate2';
@@ -96,8 +98,8 @@ function App() {
         <Route path="/bloodBank2/Blog" element={<BloodBankBlog2 />} />
         <Route path="/bloodBank2/search" element={<BloodBankSearchBlood2/>} />
 
-        
-
+        <Route path="/DoctorLanding2" element={<DoctorLanding2/>} />
+        <Route path="/hospitalLanding2" element={<HospitalLanding2/>} />
 
         {/* All Dashboard Routes with Layout */}
         <Route path="/*" element={

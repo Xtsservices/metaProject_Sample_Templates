@@ -1,0 +1,81 @@
+import React from 'react';
+import { Facebook, Twitter, Linkedin, MapPin, Phone, Mail } from 'lucide-react';
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          {/* Brand */}
+          <div>
+            <h3 className="text-2xl font-bold text-red-400 mb-4">MedHealth</h3>
+            <p className="text-gray-400">
+              Providing comprehensive healthcare with compassion and excellence. Your health is our priority.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#home" className="text-gray-400 hover:text-red-400 transition">Home</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-red-400 transition">About</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-red-400 transition">Services</a></li>
+              <li><a href="#doctors" className="text-gray-400 hover:text-red-400 transition">Doctors</a></li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Services</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-400 hover:text-red-400 transition">Emergency Care</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-red-400 transition">Medical Check</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-red-400 transition">Homecare Visit</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-red-400 transition">Critical Care</a></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2">
+                <MapPin size={18} className="text-red-400 mt-1" />
+                <span className="text-gray-400">123 Medical Plaza, Health City</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={18} className="text-red-400" />
+                <span className="text-gray-400">+123 456 789</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={18} className="text-red-400" />
+                <span className="text-gray-400">medhealth@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Links */}
+        <div className="border-t border-gray-800 pt-8 flex justify-between items-center flex-wrap gap-4">
+          <p className="text-gray-400">
+            © {currentYear} MedHealth - All rights reserved
+          </p>
+          <div className="flex gap-4">
+            <a href="#" className="text-gray-400 hover:text-red-400 transition">
+              <Facebook size={24} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-red-400 transition">
+              <Twitter size={24} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-red-400 transition">
+              <Linkedin size={24} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
