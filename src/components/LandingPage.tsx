@@ -24,12 +24,28 @@ export default function LandingPage() {
       textColor: 'text-teal-700'
     },
     {
+      title: 'Pharmacy 2',
+      icon: Pill,
+      description: 'Alternate pharmacy portal',
+      path: '/pharmacy2',
+      gradient: 'from-teal-500 to-teal-700',
+      textColor: 'text-teal-600'
+    },
+    {
       title: 'Doctor',
       icon: Stethoscope,
       description: 'Patient care and consultations',
       path: '/doctor',
       gradient: 'from-blue-600 to-blue-800',
       textColor: 'text-blue-700'
+    },
+    {
+      title: 'Doctor 2',
+      icon: Stethoscope,
+      description: 'Alternate doctor portal',
+      path: '/DoctorLanding2',
+      gradient: 'from-blue-500 to-blue-700',
+      textColor: 'text-blue-600'
     },
     {
       title: 'Labs',
@@ -56,6 +72,14 @@ export default function LandingPage() {
       textColor: 'text-red-700'
     },
     {
+      title: 'Blood Bank 2',
+      icon: Droplet,
+      description: 'Alternate blood bank portal',
+      path: '/bloodBank2',
+      gradient: 'from-rose-600 to-rose-800',
+      textColor: 'text-rose-700'
+    },
+    {
       title: 'Ambulance',
       icon: Ambulance,
       description: 'Emergency services dispatch',
@@ -78,6 +102,14 @@ export default function LandingPage() {
       path: '/hospital',
       gradient: 'from-indigo-600 to-indigo-800',
       textColor: 'text-indigo-700'
+    },
+    {
+      title: 'Hospital 2',
+      icon: Building2,
+      description: 'Alternate hospital portal',
+      path: '/hospitalLanding2',
+      gradient: 'from-indigo-500 to-indigo-700',
+      textColor: 'text-indigo-600'
     }
   ];
 

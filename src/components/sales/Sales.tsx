@@ -178,7 +178,7 @@ const Sales: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 p-8">
       <div className="max-w-[1600px] mx-auto space-y-6">
         
         {/* Stats Grid */}
@@ -186,13 +186,13 @@ const Sales: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`${stat.bgColor} rounded-2xl shadow-sm p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 ${
-                index === 0 ? 'border border-blue-300' : 'border border-slate-200'
+              className={`${stat.bgColor} ${index === 0 ? 'dark:bg-gradient-to-br dark:from-blue-600 dark:to-blue-700' : 'dark:bg-gray-800'} rounded-2xl shadow-sm p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 ${
+                index === 0 ? 'border border-blue-300 dark:border-white' : 'border border-slate-200 dark:border-white'
               }`}
             >
               <div className="flex items-start justify-between mb-4">
                 <h3 className={`text-sm font-medium ${
-                  index === 0 ? 'text-blue-50' : 'text-slate-600'
+                  index === 0 ? 'text-blue-50 dark:text-blue-100' : 'text-slate-600 dark:text-slate-300'
                 }`}>
                   {stat.title}
                 </h3>
@@ -202,7 +202,7 @@ const Sales: React.FC = () => {
               </div>
               
               <div className="mb-3">
-                <span className={`text-3xl font-bold ${stat.textColor}`}>
+                <span className={`text-3xl font-bold ${index === 0 ? 'text-white' : 'text-slate-900 dark:text-white'}`}>
                   {stat.value}
                 </span>
               </div>
@@ -219,7 +219,7 @@ const Sales: React.FC = () => {
                   <span>{stat.trend > 0 ? '+' : ''}{stat.trend}%</span>
                 </div>
                 <span className={`text-xs ${
-                  index === 0 ? 'text-blue-100' : 'text-slate-500'
+                  index === 0 ? 'text-blue-100 dark:text-blue-200' : 'text-slate-500 dark:text-slate-400'
                 }`}>
                   Since Last Week
                 </span>
@@ -232,10 +232,10 @@ const Sales: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
           
           {/* Total Revenue Chart */}
-          <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-slate-200 dark:border-white p-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-bold text-slate-900">Total Revenue</h2>
-              <select className="px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-700">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Total Revenue</h2>
+              <select className="px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-slate-700 dark:text-slate-300">
                 <option>This Year</option>
                 <option>Last Year</option>
               </select>
@@ -243,7 +243,7 @@ const Sales: React.FC = () => {
             
             <div className="relative h-64">
               {/* Y-axis labels */}
-              <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-slate-400">
+              <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-slate-400 dark:text-slate-500">
                 <span>1,000</span>
                 <span>800</span>
                 <span>600</span>
@@ -253,7 +253,7 @@ const Sales: React.FC = () => {
               </div>
               
               {/* Chart area */}
-              <div className="ml-12 h-full flex items-end justify-between gap-3 border-b border-l border-slate-200 pb-8 pl-4">
+              <div className="ml-12 h-full flex items-end justify-between gap-3 border-b border-l border-slate-200 dark:border-slate-700 pb-8 pl-4">
                 {revenueData.map((data, index) => (
                   <div key={index} className="flex-1 flex flex-col items-center gap-2 group relative">
                     <div className="w-full relative">
@@ -270,7 +270,7 @@ const Sales: React.FC = () => {
                       {/* subtle top glow */}
                       <div className="absolute -top-2 left-0 right-0 h-2 rounded-t-2xl pointer-events-none" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.35), transparent)' }} />
                     </div>
-                    <span className="text-xs text-slate-600 font-medium">{data.month}</span>
+                    <span className="text-xs text-slate-600 dark:text-slate-300 font-medium">{data.month}</span>
                   </div>
                 ))}
               </div>
@@ -278,10 +278,10 @@ const Sales: React.FC = () => {
           </div>
  
           {/* Orders By Time Heatmap */}
-          <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md border border-slate-200 dark:border-white p-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-bold text-slate-900">Orders By Time</h2>
-              <select className="px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-700">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Orders By Time</h2>
+              <select className="px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-slate-700 dark:text-slate-300">
                 <option>This Month</option>
                 <option>Last Month</option>
               </select>
@@ -289,7 +289,7 @@ const Sales: React.FC = () => {
             
             <div className="space-y-3">
               {/* Legend */}
-              <div className="flex items-center justify-end gap-4 mb-2 text-xs text-slate-600">
+              <div className="flex items-center justify-end gap-4 mb-2 text-xs text-slate-600 dark:text-slate-300">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1 items-center">
                     <div className="w-4 h-4 bg-blue-100 rounded"></div>
@@ -314,7 +314,7 @@ const Sales: React.FC = () => {
                    style={{ gridTemplateColumns: `repeat(${orderTimeData.length}, minmax(0, 1fr))` }}
                  >
                    {orderTimeData.map((day) => (
-                     <div key={day.day} className="text-xs text-center text-slate-600 font-medium">
+                     <div key={day.day} className="text-xs text-center text-slate-600 dark:text-slate-300 font-medium">
                        {day.day}
                      </div>
                    ))}
@@ -323,9 +323,9 @@ const Sales: React.FC = () => {
  
                {/* Rows for each time (y-axis) */}
                <div className="space-y-2">
-                 {times.map((hour, ) => (
+                 {times.map((hour) => (
                    <div key={hour} className="flex items-center gap-2">
-                     <div className="w-12 text-xs text-slate-600 font-medium">{hour}</div>
+                     <div className="w-12 text-xs text-slate-600 dark:text-slate-300 font-medium">{hour}</div>
                      <div
                        className="flex-1 grid gap-2"
                        style={{ gridTemplateColumns: `repeat(${orderTimeData.length}, minmax(0, 1fr))` }}
@@ -356,45 +356,45 @@ const Sales: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           
           {/* Recent Orders */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="p-6 border-b border-slate-200">
-              <h2 className="text-lg font-bold text-slate-900">Recent Order</h2>
+          <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white overflow-hidden">
+            <div className="p-6 border-b border-slate-200 dark:border-slate-700">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Recent Order</h2>
             </div>
             
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="bg-slate-50 border-b border-slate-200">
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  <tr className="bg-slate-50 dark:bg-gray-700 border-b border-slate-200 dark:border-slate-600">
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Order ID
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Product Name
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Total Price
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Payment Status
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Order Status
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Action
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200">
+                <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
                   {orders.map((order, index) => (
-                    <tr key={index} className="hover:bg-slate-50 transition-colors">
-                      <td className="px-6 py-4 text-sm font-medium text-slate-900">
+                    <tr key={index} className="hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
+                      <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                         {order.id}
                       </td>
-                      <td className="px-6 py-4 text-sm text-slate-700">
+                      <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                         {order.productName}
                       </td>
-                      <td className="px-6 py-4 text-sm text-slate-700">
+                      <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                         ${order.totalPrice}
                       </td>
                       <td className="px-6 py-4">
@@ -447,25 +447,25 @@ const Sales: React.FC = () => {
           </div>
 
           {/* Top Products */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div className="p-6 border-b border-slate-200">
-              <h2 className="text-lg font-bold text-slate-900">Top Products</h2>
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white overflow-hidden">
+            <div className="p-6 border-b border-slate-200 dark:border-slate-700">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Top Products</h2>
             </div>
             
             <div className="p-6 space-y-4">
               {topProducts.map((product, index) => (
-                <div key={index} className="flex items-center justify-between group hover:bg-slate-50 p-3 -mx-3 rounded-xl transition-colors">
+                <div key={index} className="flex items-center justify-between group hover:bg-slate-50 dark:hover:bg-gray-700 p-3 -mx-3 rounded-xl transition-colors">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center text-2xl">
                       {product.image}
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-slate-900">{product.name}</h3>
-                      <p className="text-xs text-slate-500">{product.sold} Sold</p>
+                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{product.name}</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">{product.sold} Sold</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-bold text-slate-900">${product.revenue}</p>
+                    <p className="text-sm font-bold text-slate-900 dark:text-white">${product.revenue}</p>
                   </div>
                 </div>
               ))}

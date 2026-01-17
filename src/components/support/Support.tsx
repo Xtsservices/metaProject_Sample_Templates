@@ -106,13 +106,13 @@ const Support: React.FC = () => {
   const maxTickets = Math.max(...agentData.map(a => a.tickets));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/20 to-slate-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/20 to-slate-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 p-8">
       <div className="max-w-[1600px] mx-auto space-y-8">
         
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-slate-900 mb-1">Tickets</h1>
-          <div className="flex items-center gap-2 text-sm text-slate-600">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">Tickets</h1>
+          <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
             <span>⊕</span>
             <span>Extra</span>
             <span>›</span>
@@ -125,14 +125,14 @@ const Support: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               <div className="p-6">
                 <div className="text-center mb-4">
-                  <div className="text-3xl font-bold text-slate-900 mb-1">
+                  <div className="text-3xl font-bold text-slate-900 dark:text-white mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-slate-600">
+                  <div className="text-sm text-slate-600 dark:text-slate-300">
                     {stat.label}
                   </div>
                 </div>
@@ -149,10 +149,10 @@ const Support: React.FC = () => {
         {/* Charts Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
-          {/* Tickets Share Per Category - Donut Chart */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+          {/* Donut Chart */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white p-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-bold text-slate-900">Tickets share per category</h2>
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Tickets share per category</h2>
               <button className="text-slate-400 hover:text-slate-600">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="1" fill="currentColor" />
@@ -207,8 +207,8 @@ const Support: React.FC = () => {
                   <div key={index} className="flex items-center gap-3">
                     <div className={`w-3 h-3 rounded-full ${category.color}`}></div>
                     <div>
-                      <div className="text-sm font-medium text-slate-900">{category.name}</div>
-                      <div className="text-xs text-slate-500">{category.value}</div>
+                      <div className="text-sm font-medium text-slate-900 dark:text-white">{category.name}</div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400">{category.value}</div>
                     </div>
                   </div>
                 ))}
@@ -216,10 +216,10 @@ const Support: React.FC = () => {
             </div>
           </div>
 
-          {/* Tickets Share Per Agent - Bar Chart */}
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+          {/* Bar Chart */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white p-6">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-bold text-slate-900">Tickets share per agent</h2>
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white">Tickets share per agent</h2>
               <button className="text-slate-400 hover:text-slate-600">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="1" fill="currentColor" />
@@ -238,7 +238,7 @@ const Support: React.FC = () => {
                     ></div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xs font-medium text-slate-900">{agent.name}</div>
+                    <div className="text-xs font-medium text-slate-900 dark:text-white">{agent.name}</div>
                     <div className={`text-xs font-bold px-2 py-0.5 ${agent.color} text-white rounded mt-1`}>
                       {agent.tickets}
                     </div>
@@ -250,30 +250,28 @@ const Support: React.FC = () => {
         </div>
 
         {/* Support Ticket List */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-          <div className="p-6 border-b border-slate-200">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white overflow-hidden">
+          <div className="p-6 border-b border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-xl font-bold text-slate-900 mb-1">Support Ticket List</h2>
-                <p className="text-sm text-blue-600">List of ticket opened by customers</p>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">Support Ticket List</h2>
+                <p className="text-sm text-blue-600 dark:text-blue-400">List of ticket opened by customers</p>
               </div>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-slate-600">Show</span>
-                  <select className="px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-700">
+                  <span className="text-sm text-slate-600 dark:text-slate-300">Show</span>
+                  <select className="px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-slate-700 dark:text-slate-300">
                     <option>10</option>
                     <option>20</option>
                     <option>50</option>
                   </select>
-                  <span className="text-sm text-slate-600">entries</span>
+                  <span className="text-sm text-slate-600 dark:text-slate-300">entries</span>
                 </div>
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="pl-3 pr-10 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
-                  />
-                </div>
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="pl-3 pr-10 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64 bg-white dark:bg-gray-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500"
+                />
               </div>
             </div>
           </div>
@@ -281,9 +279,9 @@ const Support: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-200">
+                <tr className="bg-slate-50 dark:bg-gray-700 border-b border-slate-200 dark:border-slate-600">
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       ID
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -291,7 +289,7 @@ const Support: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Opc. by
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -299,7 +297,7 @@ const Support: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Cust. Email
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -307,7 +305,7 @@ const Support: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Subject
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -315,7 +313,7 @@ const Support: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Status
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -323,7 +321,7 @@ const Support: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Ass. to
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -331,7 +329,7 @@ const Support: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Date
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -339,7 +337,7 @@ const Support: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Action
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -348,19 +346,19 @@ const Support: React.FC = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
+              <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
                 {tickets.map((ticket, index) => (
-                  <tr key={index} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">
+                  <tr key={index} className="hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                       {ticket.id}
                     </td>
-                    <td className="px-6 py-4 text-sm text-blue-600 hover:underline cursor-pointer">
+                    <td className="px-6 py-4 text-sm text-blue-600 dark:text-blue-400 hover:underline cursor-pointer">
                       {ticket.openedBy}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {ticket.customerEmail}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {ticket.subject}
                     </td>
                     <td className="px-6 py-4">
@@ -377,14 +375,14 @@ const Support: React.FC = () => {
                         <option value="pending">Pending</option>
                       </select>
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {ticket.assignedTo}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {ticket.date}
                     </td>
                     <td className="px-6 py-4">
-                      <button className="p-2 text-rose-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-all">
+                      <button className="p-2 text-rose-500 dark:text-rose-400 hover:text-rose-600 dark:hover:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-900/30 rounded-lg transition-all">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </td>

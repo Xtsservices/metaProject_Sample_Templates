@@ -66,21 +66,21 @@ const Products: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 p-8">
       <div className="max-w-[1600px] mx-auto space-y-6">
         
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white p-6 hover:shadow-md transition-shadow">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-slate-600">Total Products</span>
+              <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Total Products</span>
               <button className="text-slate-400 hover:text-slate-600 transition-colors">
                 <MoreVertical className="w-5 h-5" />
               </button>
             </div>
             <div className="flex items-baseline gap-2">
               <Package className="w-5 h-5 text-slate-400" />
-              <span className="text-3xl font-bold text-slate-900">20,120</span>
+              <span className="text-3xl font-bold text-slate-900 dark:text-white">20,120</span>
             </div>
           </div>
 
@@ -116,8 +116,8 @@ const Products: React.FC = () => {
           {categories.map((category, index) => (
             <div
               key={index}
-              className={`${category.color} rounded-2xl shadow-sm border ${
-                category.name === 'Antibiotics' ? 'border-blue-300 text-white' : 'border-slate-200'
+              className={`${category.color} ${category.name === 'Antibiotics' ? 'dark:bg-blue-700' : 'dark:bg-gray-800'} rounded-2xl shadow-sm border ${
+                category.name === 'Antibiotics' ? 'border-blue-300 dark:border-white text-white' : 'border-slate-200 dark:border-white'
               } p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1`}
             >
               <div className="flex items-start justify-between mb-4">
@@ -134,14 +134,14 @@ const Products: React.FC = () => {
               </div>
               
               <h3 className={`text-sm font-medium mb-2 ${
-                category.name === 'Antibiotics' ? 'text-blue-50' : 'text-slate-600'
+                category.name === 'Antibiotics' ? 'text-blue-50 dark:text-blue-100' : 'text-slate-600 dark:text-slate-300'
               }`}>
                 {category.name}
               </h3>
               
               <div className="flex items-baseline justify-between">
                 <span className={`text-3xl font-bold ${
-                  category.name === 'Antibiotics' ? 'text-white' : 'text-slate-900'
+                  category.name === 'Antibiotics' ? 'text-white' : 'text-slate-900 dark:text-white'
                 }`}>
                   {category.count}
                 </span>
@@ -157,7 +157,7 @@ const Products: React.FC = () => {
               </div>
               
               <p className={`text-xs mt-2 ${
-                category.name === 'Antibiotics' ? 'text-blue-100' : 'text-slate-500'
+                category.name === 'Antibiotics' ? 'text-blue-100 dark:text-blue-200' : 'text-slate-500 dark:text-slate-400'
               }`}>
                 Since Last Week
               </p>
@@ -166,24 +166,22 @@ const Products: React.FC = () => {
         </div>
 
         {/* Product List */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-          <div className="p-6 border-b border-slate-200">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white overflow-hidden">
+          <div className="p-6 border-b border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-slate-900">Product List</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white">Product List</h2>
               <div className="flex items-center gap-3">
-                <select className="px-3 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-700">
+                <select className="px-3 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-slate-700 dark:text-slate-300">
                   <option>5</option>
                   <option>10</option>
                   <option>20</option>
                 </select>
-                <span className="text-sm text-slate-500">entries</span>
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="pl-3 pr-10 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
-                  />
-                </div>
+                <span className="text-sm text-slate-500 dark:text-slate-400">entries</span>
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="pl-3 pr-10 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64 bg-white dark:bg-gray-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500"
+                />
               </div>
             </div>
           </div>
@@ -191,40 +189,40 @@ const Products: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-200">
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                <tr className="bg-slate-50 dark:bg-gray-700 border-b border-slate-200 dark:border-slate-600">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                     Product ID
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                     Product Name
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                     Quantity
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                     Price
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                     Action
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
+              <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
                 {products.map((product, index) => (
-                  <tr key={index} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">
+                  <tr key={index} className="hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                       {product.id}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {product.name}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {product.quantity} Units
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       ${product.price}
                     </td>
                     <td className="px-6 py-4">
@@ -259,8 +257,8 @@ const Products: React.FC = () => {
             </table>
           </div>
 
-          <div className="px-6 py-4 border-t border-slate-200 flex items-center justify-between">
-            <div className="text-sm text-slate-600">
+          <div className="px-6 py-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <div className="text-sm text-slate-600 dark:text-slate-400">
               Showing 1 to 5 of 6 entries
             </div>
             <div className="flex items-center gap-2">

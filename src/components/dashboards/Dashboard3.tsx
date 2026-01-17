@@ -65,20 +65,20 @@ const Dashboard3 = () => {
   const maxValue = Math.max(...monthlySales.map(m => m.value));
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <div className="max-w-[1600px] mx-auto space-y-6">
         {/* Top Section - Total Sale and Order */}
         <div>
           {/* Total Sale */}
-          <div className="bg-white rounded-xl p-6 shadow-sm">
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-sm text-gray-600">Total Sale</h3>
-              <select className="text-xs border border-gray-200 rounded px-2 py-1">
+              <h3 className="text-sm text-gray-600 dark:text-gray-300">Total Sale</h3>
+              <select className="text-xs border border-gray-200 dark:border-gray-600 rounded px-2 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300">
                 <option>Last 7 Days</option>
               </select>
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-1">$1,950.86</h2>
-            <p className="text-xs text-gray-500 mb-6">Total year sales breakdown by $723.43 from last month</p>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">$1,950.86</h2>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-6">Total year sales breakdown by $723.43 from last month</p>
 
             {/* Sales Cards */}
             <div className="grid grid-cols-3 gap-4">
@@ -94,16 +94,16 @@ const Dashboard3 = () => {
         </div>
 
         {/* Total Order with Chart */}
-          <div className="bg-white rounded-xl p-6 shadow-sm relative">
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm relative border border-gray-200 dark:border-white">
             <div className="absolute top-4 right-4">
               <button className="text-gray-400 hover:text-gray-600">⋮</button>
             </div>
-            <h3 className="text-sm text-gray-600 mb-2">Total Order</h3>
+            <h3 className="text-sm text-gray-600 dark:text-gray-300 mb-2">Total Order</h3>
             <div className="flex items-baseline gap-2 mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">$564</h2>
-              <span className="text-xs text-green-600">+3.5%</span>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">$564</h2>
+              <span className="text-xs text-green-600 dark:text-green-400">+3.5%</span>
             </div>
-            <p className="text-xs text-gray-500 mb-4">Total order have increase by 21% from last month</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">Total order have increase by 21% from last month</p>
             
             {/* Area Chart */}
             <div className="h-32">
@@ -131,10 +131,10 @@ const Dashboard3 = () => {
         {/* Middle Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Revenue By Category */}
-          <div className="bg-white rounded-xl p-6 shadow-sm">
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-gray-900">Revenue By Category</h3>
-              <select className="text-xs border border-gray-200 rounded px-2 py-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Revenue By Category</h3>
+              <select className="text-xs border border-gray-200 dark:border-gray-600 rounded px-2 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300">
                 <option>Monthly</option>
               </select>
             </div>
@@ -184,24 +184,24 @@ const Dashboard3 = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-pink-300 rounded-full"></div>
-                <span className="text-sm text-gray-700">Pet Food</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Pet Food</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-teal-300 rounded-full"></div>
-                <span className="text-sm text-gray-700">Wellness</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Wellness</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-yellow-200 rounded-full"></div>
-                <span className="text-sm text-gray-700">Accessories</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Accessories</span>
               </div>
             </div>
           </div>
 
           {/* Monthly Sales Performance */}
-          <div className="lg:col-span-2 bg-white rounded-xl p-6 shadow-sm">
+          <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-gray-900">Monthly Sales Performance</h3>
-              <select className="text-xs border border-gray-200 rounded px-2 py-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Monthly Sales Performance</h3>
+              <select className="text-xs border border-gray-200 dark:border-gray-600 rounded px-2 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300">
                 <option>This Year</option>
               </select>
             </div>
@@ -215,102 +215,101 @@ const Dashboard3 = () => {
                       style={{ height: `${(data.value / maxValue) * 100}%` }}
                     />
                   </div>
-                  <span className="text-xs text-gray-600">{data.month}</span>
+                  <span className="text-xs text-gray-600 dark:text-gray-300">{data.month}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="lg:col-span-2 bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-gray-900">Top Selling Products</h3>
-            </div>
-            
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-gray-100">
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Product ID</th>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Product Name</th>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Quantity</th>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Price</th>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Status</th>
-                    <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Action</th>
+        {/* Top Selling Products */}
+        <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
+          <div className="flex items-center justify-between mb-6">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white">Top Selling Products</h3>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-gray-100 dark:border-gray-700">
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Product ID</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Product Name</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Quantity</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Price</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Status</th>
+                  <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600 dark:text-gray-300">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {products.map((product, index) => (
+                  <tr key={index} className="border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-4 px-4 text-sm text-gray-900 dark:text-gray-100">{product.id}</td>
+                    <td className="py-4 px-4 text-sm text-gray-900 dark:text-gray-100">{product.name}</td>
+                    <td className="py-4 px-4 text-sm text-gray-600 dark:text-gray-300">{product.quantity}</td>
+                    <td className="py-4 px-4 text-sm text-gray-900 dark:text-gray-100">{product.price}</td>
+                    <td className="py-4 px-4">
+                      <select
+                        value={product.status}
+                        onChange={(e) => {
+                          const newStatus = e.target.value;
+                          setProducts(prev => prev.map(p => p.id === product.id ? { ...p, status: newStatus } : p));
+                        }}
+                        className={`text-xs px-3 py-1 rounded-full font-medium ${getStatusColor(product.status)} border-none focus:outline-none`}
+                      >
+                        <option value="In Stock">In Stock</option>
+                        <option value="Out Of stock">Out Of stock</option>
+                        <option value="Limited">Limited</option>
+                      </select>
+                    </td>
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-2">
+                        <button>
+                          <Eye className="w-4 h-4 text-gray-600" />
+                        </button>
+                        <button>
+                          <Edit className="w-4 h-4 text-gray-600" />
+                        </button>
+                        <button>
+                          <Trash2 className="w-4 h-4 text-gray-600" />
+                        </button>
+                      </div>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {products.map((product, index) => (
-                    <tr key={index} className="border-b border-gray-50 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-sm text-gray-900">{product.id}</td>
-                      <td className="py-4 px-4 text-sm text-gray-900">{product.name}</td>
-                      <td className="py-4 px-4 text-sm text-gray-600">{product.quantity}</td>
-                      <td className="py-4 px-4 text-sm text-gray-900">{product.price}</td>
-                      <td className="py-4 px-4">
-                        <select
-                          value={product.status}
-                          onChange={(e) => {
-                            const newStatus = e.target.value;
-                            setProducts(prev => prev.map(p => p.id === product.id ? { ...p, status: newStatus } : p));
-                          }}
-                          className={`text-xs px-3 py-1 rounded-full font-medium ${getStatusColor(product.status)} border-none focus:outline-none`}
-                        >
-                          <option value="In Stock">In Stock</option>
-                          <option value="Out Of stock">Out Of stock</option>
-                          <option value="Limited">Limited</option>
-                        </select>
-                      </td>
-                      <td className="py-4 px-4">
-                        <div className="flex items-center gap-2">
-                          <button>
-                            <Eye className="w-4 h-4 text-gray-600" />
-                          </button>
-                          <button>
-                            <Edit className="w-4 h-4 text-gray-600" />
-                          </button>
-                          <button>
-                            <Trash2 className="w-4 h-4 text-gray-600" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="flex items-center justify-between mt-4 text-sm text-gray-600 dark:text-gray-300">
+            <span>Showing 1 to 5 of 5 entries</span>
+            <div className="flex gap-2">
+              <button className="px-3 py-1 border border-gray-200 rounded hover:bg-gray-50">Previous</button>
+              <button className="px-3 py-1 bg-blue-600 text-white rounded">1</button>
+              <button className="px-3 py-1 border border-gray-200 rounded hover:bg-gray-50">Next</button>
             </div>
-            
-            <div className="flex items-center justify-between mt-4 text-sm text-gray-600">
-              <span>Showing 1 to 5 of 5 entries</span>
-              <div className="flex gap-2">
-                <button className="px-3 py-1 border border-gray-200 rounded hover:bg-gray-50">Previous</button>
-                <button className="px-3 py-1 bg-blue-600 text-white rounded">1</button>
-                <button className="px-3 py-1 border border-gray-200 rounded hover:bg-gray-50">Next</button>
-              </div>
-            </div>
+          </div>
         </div>
 
+        {/* Bottom Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-        {/* Bottom Stats */}     
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6">
-          {bottomStats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-              <div className={`w-12 h-12 ${stat.bgColor} rounded-lg flex items-center justify-center mb-4`}>
-                {stat.icon}
+          {/* Bottom Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-6">
+            {bottomStats.map((stat, index) => (
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
+                <div className={`w-12 h-12 ${stat.bgColor} rounded-lg flex items-center justify-center mb-4`}>
+                  {stat.icon}
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{stat.label}</p>
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</h3>
+                <p className="text-xs text-green-600 flex items-center gap-1">
+                  <TrendingUp className="w-3 h-3" />
+                  {stat.change}
+                </p>
               </div>
-              <p className="text-sm text-gray-600 mb-2">{stat.label}</p>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</h3>
-              <p className="text-xs text-green-600 flex items-center gap-1">
-                <TrendingUp className="w-3 h-3" />
-                {stat.change}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
           {/* Top Products Sidebar */}
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <h3 className="text-lg font-bold text-gray-900 mb-6">Top Products</h3>
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Top Products</h3>
             <div className="space-y-4">
               {topProducts.map((product, index) => (
                 <div key={index} className="flex items-center justify-between">
@@ -319,11 +318,11 @@ const Dashboard3 = () => {
                       {product.image}
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-900">{product.name}</p>
-                      <p className="text-xs text-gray-500">{product.units}</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{product.name}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">{product.units}</p>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-gray-900">{product.price}</span>
+                  <span className="text-sm font-bold text-gray-900 dark:text-white">{product.price}</span>
                 </div>
               ))}
             </div>

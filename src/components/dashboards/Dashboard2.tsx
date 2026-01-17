@@ -122,25 +122,25 @@ const Dashboard2 = () => {
           />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-2xl font-bold text-gray-700">{value}</span>
+          <span className="text-2xl font-bold text-gray-700 dark:text-gray-200">{value}</span>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <div className="max-w-[1600px] mx-auto space-y-6">
         {/* Top Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
               <div className={`w-12 h-12 ${stat.bgColor} rounded-lg flex items-center justify-center mb-4`}>
                 {stat.icon}
               </div>
-              <p className="text-sm text-gray-600 mb-2">{stat.label}</p>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</h3>
-              <p className={`text-xs flex items-center gap-1 ${stat.positive ? 'text-green-600' : 'text-red-600'}`}>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{stat.label}</p>
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</h3>
+              <p className={`text-xs flex items-center gap-1 ${stat.positive ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                 {stat.positive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                 {stat.change}
               </p>
@@ -149,20 +149,20 @@ const Dashboard2 = () => {
         </div>
 
         {/* User Reviews */}
-        <div className="bg-white rounded-xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
         <div className="flex items-center justify-between mb-6">
-            <h3 className="text-lg font-bold text-gray-900">User Reviews</h3>
-            <button className="text-sm text-blue-600 hover:text-blue-700">All Reviews +</button>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white">User Reviews</h3>
+            <button className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">All Reviews +</button>
         </div>
         <div className="space-y-4">
             {reviews.map((review, index) => (
-            <div key={index} className="pb-4 border-b border-gray-100 last:border-0">
+            <div key={index} className="pb-4 border-b border-gray-100 dark:border-gray-700 last:border-0">
                 <div className="flex items-start gap-3 mb-2">
                 <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-lg">
                     {review.avatar}
                 </div>
                 <div className="flex-1">
-                    <h4 className="text-sm font-semibold text-gray-900">{review.name}</h4>
+                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white">{review.name}</h4>
                     <div className="flex gap-1 mt-1">
                     {[...Array(5)].map((_, i) => (
                         <span key={i} className={i < review.rating ? 'text-yellow-400' : 'text-gray-300'}>★</span>
@@ -170,18 +170,17 @@ const Dashboard2 = () => {
                     </div>
                 </div>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">{review.text}</p>
+                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{review.text}</p>
             </div>
             ))}
         </div>
         </div>
 
-        {/* Rate Cards and Revenue Chart */}
+        {/* Rate Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Rate Cards */}
           {rateCards.map((card, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">{card.label}</h3>
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">{card.label}</h3>
               <div className="flex justify-center mb-4">
                 <CircularProgress value={card.value} color={card.strokeColor} />
               </div>
@@ -194,13 +193,13 @@ const Dashboard2 = () => {
         </div>
 
         {/* Revenue Chart */}
-        <div className="bg-white rounded-xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
             <div className="flex items-center justify-between mb-6">
             <div>
-                <h3 className="text-lg font-bold text-gray-900">Total Revenue</h3>
-                <p className="text-2xl font-bold text-gray-900 mt-1">$1,05,455.86</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">Total Revenue</h3>
+                <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">$1,05,455.86</p>
             </div>
-            <select className="text-sm border border-gray-200 rounded-lg px-3 py-2 text-gray-600">
+            <select className="text-sm border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-700">
                 <option>Today</option>
             </select>
             </div>
@@ -229,10 +228,10 @@ const Dashboard2 = () => {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Sales Analytics */}
-          <div className="lg:col-span-2 bg-white rounded-xl p-6 shadow-sm h-96">
+          <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm h-96 border border-gray-200 dark:border-white">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-gray-900">Sales Analytics</h3>
-              <select className="text-sm border border-gray-200 rounded-lg px-3 py-2 text-gray-600">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Sales Analytics</h3>
+              <select className="text-sm border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-700">
                 <option>Year</option>
               </select>
             </div>
@@ -245,61 +244,62 @@ const Dashboard2 = () => {
                       style={{ height: `${(data.value / maxSales) * 100}%` }}
                     />
                   </div>
-                  <span className="text-xs text-gray-600 font-medium">{data.year}</span>
+                  <span className="text-xs text-gray-600 dark:text-gray-300 font-medium">{data.year}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Top Selling Products */}
-          <div className="bg-white rounded-xl p-6 shadow-sm h-96">
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm h-96 border border-gray-200 dark:border-white">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-gray-900">Top Selling Products</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Top Selling Products</h3>
             </div>
             <div className="space-y-3 h-64 overflow-y-auto">
               {topProducts.map((product, index) => (
-                <div key={index} className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50">
+                <div key={index} className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-lg">
                       {product.image}
                     </div>
-                    <span className="text-sm font-medium text-gray-900">{product.name}</span>
+                    <span className="text-sm font-medium text-gray-900 dark:text-white">{product.name}</span>
                   </div>
-                  <span className="text-sm font-semibold text-gray-900">{product.price}</span>
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white">{product.price}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
         {/* Transaction Overview */}
-        <div className="bg-white rounded-xl p-6 shadow-sm">
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-white">
             <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-bold text-gray-900">Transaction Overview</h3>
-            <button className="text-sm text-blue-600 hover:text-blue-700 font-medium">Export ↗</button>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Transaction Overview</h3>
+            <button className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium">Export ↗</button>
             </div>
             <div className="overflow-x-auto">
             <table className="w-full">
                 <thead>
-                <tr className="border-b border-gray-100">
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Order ID</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Customer Name</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Order Date</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Product Ordered</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Total Price</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Transaction ID</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Order Status</th>
-                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Action</th>
+                <tr className="border-b border-gray-100 dark:border-gray-700">
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Order ID</th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Customer Name</th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Order Date</th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Product Ordered</th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Total Price</th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Transaction ID</th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Order Status</th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 {transactions.map((trans) => (
-                    <tr key={trans.id} className="border-b border-gray-50 hover:bg-gray-50">
-                    <td className="py-3 px-4 text-sm text-gray-900">{trans.id}</td>
-                    <td className="py-3 px-4 text-sm text-gray-900">{trans.customer}</td>
-                    <td className="py-3 px-4 text-sm text-gray-600">{trans.date}</td>
-                    <td className="py-3 px-4 text-sm text-gray-900">{trans.product}</td>
-                    <td className="py-3 px-4 text-sm text-gray-900">{trans.price}</td>
-                    <td className="py-3 px-4 text-sm text-gray-600">{trans.transId}</td>
+                    <tr key={trans.id} className="border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td className="py-3 px-4 text-sm text-gray-900 dark:text-gray-100">{trans.id}</td>
+                    <td className="py-3 px-4 text-sm text-gray-900 dark:text-gray-100">{trans.customer}</td>
+                    <td className="py-3 px-4 text-sm text-gray-600 dark:text-gray-300">{trans.date}</td>
+                    <td className="py-3 px-4 text-sm text-gray-900 dark:text-gray-100">{trans.product}</td>
+                    <td className="py-3 px-4 text-sm text-gray-900 dark:text-gray-100">{trans.price}</td>
+                    <td className="py-3 px-4 text-sm text-gray-600 dark:text-gray-300">{trans.transId}</td>
                     <td className="py-3 px-4">
                         <select
                           value={trans.status}
@@ -316,13 +316,13 @@ const Dashboard2 = () => {
                     </td>
                     <td className="py-3 px-4">
                         <div className="flex items-center gap-2">
-                        <button className="text-gray-400 hover:text-gray-600">
+                        <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                             <Eye className="w-4 h-4" />
                         </button>
-                        <button className="text-gray-400 hover:text-gray-600">
+                        <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                             <Download className="w-4 h-4" />
                         </button>
-                        <button className="text-gray-400 hover:text-gray-600">
+                        <button className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300">
                             <Share2 className="w-4 h-4" />
                         </button>
                         </div>
@@ -332,7 +332,7 @@ const Dashboard2 = () => {
                 </tbody>
             </table>
             </div>
-            <div className="flex items-center justify-between mt-4 text-sm text-gray-600">
+            <div className="flex items-center justify-between mt-4 text-sm text-gray-600 dark:text-gray-300">
             <span>Showing 1 to 5 of 11 entries</span>
             <div className="flex gap-2">
                 <button className="px-3 py-1 border border-gray-200 rounded hover:bg-gray-50">Previous</button>

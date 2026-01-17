@@ -109,7 +109,7 @@ const Orders: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 p-8">
       <div className="max-w-[1600px] mx-auto space-y-8">
         
         {/* Stats Grid */}
@@ -117,19 +117,19 @@ const Orders: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`${stat.bgColor} rounded-2xl shadow-sm p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
-                index === 0 ? 'border border-blue-300' : 'border border-slate-200'
+              className={`${stat.bgColor} ${index === 0 ? 'dark:bg-gradient-to-br dark:from-blue-600 dark:to-blue-700' : 'dark:bg-gray-800'} rounded-2xl shadow-sm p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
+                index === 0 ? 'border border-blue-300 dark:border-white' : 'border border-slate-200 dark:border-white'
               }`}
             >
               <div className="flex items-start justify-between mb-6">
                 <div>
                   <h3 className={`text-sm font-semibold mb-1 ${
-                    index === 0 ? 'text-white' : 'text-slate-900'
+                    index === 0 ? 'text-white' : 'text-slate-900 dark:text-white'
                   }`}>
                     {stat.title}
                   </h3>
                   <p className={`text-xs ${
-                    index === 0 ? 'text-blue-100' : 'text-slate-500'
+                    index === 0 ? 'text-blue-100 dark:text-blue-200' : 'text-slate-500 dark:text-slate-400'
                   }`}>
                     {stat.subtitle}
                   </p>
@@ -141,7 +141,7 @@ const Orders: React.FC = () => {
               
               <div className="mb-4">
                 <div className="flex items-baseline gap-3">
-                  <span className={`text-4xl font-bold ${stat.textColor}`}>
+                  <span className={`text-4xl font-bold ${index === 0 ? 'text-white' : 'text-slate-900 dark:text-white'}`}>
                     {stat.value.toLocaleString()}
                   </span>
                   {stat.trend && (
@@ -154,7 +154,7 @@ const Orders: React.FC = () => {
               </div>
               
               <p className={`text-xs font-medium ${
-                index === 0 ? 'text-blue-100' : 'text-slate-600'
+                index === 0 ? 'text-blue-100 dark:text-blue-200' : 'text-slate-600 dark:text-slate-300'
               }`}>
                 {stat.revenue}
               </p>
@@ -163,27 +163,25 @@ const Orders: React.FC = () => {
         </div>
 
         {/* Order List */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-          <div className="p-6 border-b border-slate-200">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white overflow-hidden">
+          <div className="p-6 border-b border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-slate-900">Order List</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white">Order List</h2>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-slate-600">Show</span>
-                  <select className="px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-700">
+                  <span className="text-sm text-slate-600 dark:text-slate-300">Show</span>
+                  <select className="px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-slate-700 dark:text-slate-300">
                     <option>10</option>
                     <option>20</option>
                     <option>50</option>
                   </select>
-                  <span className="text-sm text-slate-600">entries</span>
+                  <span className="text-sm text-slate-600 dark:text-slate-300">entries</span>
                 </div>
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="pl-3 pr-10 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
-                  />
-                </div>
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="pl-3 pr-10 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64 bg-white dark:bg-gray-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500"
+                />
               </div>
             </div>
           </div>
@@ -191,9 +189,9 @@ const Orders: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-200">
+                <tr className="bg-slate-50 dark:bg-gray-700 border-b border-slate-200 dark:border-slate-600">
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Order ID
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -201,7 +199,7 @@ const Orders: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Customer Name
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -209,7 +207,7 @@ const Orders: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Order Date
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -217,7 +215,7 @@ const Orders: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Product Ordered
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -225,7 +223,7 @@ const Orders: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Total Price
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -233,7 +231,7 @@ const Orders: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Payment Status
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -241,7 +239,7 @@ const Orders: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Order Status
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -249,7 +247,7 @@ const Orders: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Action
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -258,22 +256,22 @@ const Orders: React.FC = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
+              <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
                 {orders.map((order, index) => (
-                  <tr key={index} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">
+                  <tr key={index} className="hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                       {order.id}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {order.customerName}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {order.orderDate}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {order.productOrdered}
                     </td>
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                       ${order.totalPrice}
                     </td>
                     <td className="px-6 py-4">
@@ -324,8 +322,8 @@ const Orders: React.FC = () => {
             </table>
           </div>
 
-          <div className="px-6 py-4 border-t border-slate-200 flex items-center justify-between">
-            <div className="text-sm text-slate-600">
+          <div className="px-6 py-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <div className="text-sm text-slate-600 dark:text-slate-400">
               Showing 1 to 10 of 10 entries
             </div>
             <div className="flex items-center gap-2">
