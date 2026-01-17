@@ -51,14 +51,9 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
 
   return (
     <>
-      {/* Sidebar (positioned below fixed header) */}
-      <div className={`fixed left-0 top-16 bottom-0 bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-72 flex flex-col`}>
+      {/* Sidebar */}
+      <div className={`fixed left-0 top-16 bottom-0 bg-white dark:bg-gray-900 shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-72 flex flex-col border-r border-gray-100 dark:border-gray-800`}>
         
-        {/* Logo */}
-        {/* <div className="p-6 border-b border-gray-100">
-          <h1 className="text-xl font-bold text-gray-800">Pharmacy Admin</h1>
-        </div> */}
-
         {/* Navigation */}
         <nav className="p-4 overflow-y-auto flex-1 min-h-0">
           <ul className="space-y-2">
@@ -68,17 +63,15 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
                   <div>
                     <button
                       onClick={() => setIsDashboardOpen(!isDashboardOpen)}
-                      className={`w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors ${isDashboardOpen ? 'bg-gray-100' : ''}`}
+                      className={`w-full flex items-center justify-between px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors ${isDashboardOpen ? 'bg-gray-100 dark:bg-gray-800' : ''}`}
                     >
                       <div className="flex items-center gap-3">
-                        <item.icon size={20} className="text-gray-500" />
+                        <item.icon size={20} className="text-gray-500 dark:text-gray-400" />
                         <span className="font-medium">{item.title}</span>
                       </div>
-                      <item.icon size={20} color="#6B7280" />
                       <ChevronDown 
                         size={16} 
-                        color="#6B7280"
-                        className={`transform transition-transform ${isDashboardOpen ? 'rotate-180' : ''}`}
+                        className={`text-gray-500 dark:text-gray-400 transform transition-transform ${isDashboardOpen ? 'rotate-180' : ''}`}
                       />
                     </button>
                     
@@ -89,7 +82,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
                             <Link
                               to={subItem.path}
                               onClick={() => setIsOpen(false)}
-                              className={`block px-4 py-3 text-sm rounded-lg transition-colors ${isActive(subItem.path) ? 'bg-blue-100 text-blue-600 font-medium' : 'text-gray-600 hover:bg-gray-100'}`}
+                              className={`block px-4 py-3 text-sm rounded-lg transition-colors ${isActive(subItem.path) ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
                             >
                               {subItem.title}
                             </Link>
@@ -102,9 +95,9 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
                   <Link
                     to={item.path || '#'}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive(item.path) ? 'bg-blue-100 text-blue-600 font-medium' : 'text-gray-700 hover:bg-gray-100'}`}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive(item.path) ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium' : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
                   >
-                    <item.icon size={20} className="text-gray-500" />
+                    <item.icon size={20} className="text-gray-500 dark:text-gray-400" />
                     <span className="font-medium">{item.title}</span>
                   </Link>
                 )}
@@ -114,7 +107,7 @@ const Sidebar = ({ isOpen, setIsOpen }: SidebarProps) => {
         </nav>
       </div>
 
-      {/* Overlay for mobile only — adjusted to not cover header */}
+      {/* Overlay */}
       {isOpen && (
         <div
           className="fixed left-0 right-0 top-16 bottom-0 bg-black bg-opacity-50 z-30 lg:hidden"

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './contexts/ThemeContext'
 import LandingPage from './components/LandingPage'
 import HospitalLanding from './components/Landing/Hospital/Landing'
 import PharmacyHome from './components/pharmacy/PharmacyHome'
@@ -64,111 +65,113 @@ function App() {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <Router>
-      <Routes>
-        {/* Landing Page - Role Selection (No Layout) */}
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/labs" element={<LabsLanding />} />
-        <Route path="/labs2" element={<Labs2Home />} />
-        <Route path="/labs2/about" element={<Labs2About />} />
-        <Route path="/labs2/patients" element={<Labs2Patients />} />
-        <Route path="/labs2/pages" element={<Labs2Pages />} />
-        <Route path="/labs2/contact" element={<Labs2Contact />} />
-        <Route path="/labs2/clinicians" element={<Labs2Clinicians />} />
-        <Route path="/labs2/blog" element={<Labs2Blog />} />
-        <Route path="/hospital" element={<HospitalLanding />} />
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          {/* Landing Page - Role Selection (No Layout) */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/labs" element={<LabsLanding />} />
+          <Route path="/labs2" element={<Labs2Home />} />
+          <Route path="/labs2/about" element={<Labs2About />} />
+          <Route path="/labs2/patients" element={<Labs2Patients />} />
+          <Route path="/labs2/pages" element={<Labs2Pages />} />
+          <Route path="/labs2/contact" element={<Labs2Contact />} />
+          <Route path="/labs2/clinicians" element={<Labs2Clinicians />} />
+          <Route path="/labs2/blog" element={<Labs2Blog />} />
+          <Route path="/hospital" element={<HospitalLanding />} />
 
-        {/* Ambulance (existing) */}
-        <Route path="/ambulance">
-          <Route index element={<AmbulanceHome />} />
-          <Route path="/ambulance/services" element={<AmbulanceServices />} />
-          <Route path="/ambulance/team" element={<AmbulanceTeam />} />
-          <Route path="/ambulance/contact" element={<AmbulanceContact />} />
-          <Route path="/ambulance/about" element={<AmbulanceAbout />} />
-        </Route>
+          {/* Ambulance (existing) */}
+          <Route path="/ambulance">
+            <Route index element={<AmbulanceHome />} />
+            <Route path="/ambulance/services" element={<AmbulanceServices />} />
+            <Route path="/ambulance/team" element={<AmbulanceTeam />} />
+            <Route path="/ambulance/contact" element={<AmbulanceContact />} />
+            <Route path="/ambulance/about" element={<AmbulanceAbout />} />
+          </Route>
 
-        {/* Ambulance2 (new) */}
-        <Route path="/ambulance2">
-          <Route index element={<Ambulance2Home />} />
-          <Route path="/ambulance2/patients" element={<Ambulance2Patients />} />
-          <Route path="/ambulance2/pages" element={<Ambulance2Pages />} />
-          <Route path="/ambulance2/contact" element={<Ambulance2Contact />} />
-          <Route path="/ambulance2/clinicians" element={<Ambulance2Clinicians />} />
-          <Route path="/ambulance2/blog" element={<Ambulance2Blog />} />
-          <Route path="/ambulance2/about" element={<Ambulance2About />} />
-        </Route>
+          {/* Ambulance2 (new) */}
+          <Route path="/ambulance2">
+            <Route index element={<Ambulance2Home />} />
+            <Route path="/ambulance2/patients" element={<Ambulance2Patients />} />
+            <Route path="/ambulance2/pages" element={<Ambulance2Pages />} />
+            <Route path="/ambulance2/contact" element={<Ambulance2Contact />} />
+            <Route path="/ambulance2/clinicians" element={<Ambulance2Clinicians />} />
+            <Route path="/ambulance2/blog" element={<Ambulance2Blog />} />
+            <Route path="/ambulance2/about" element={<Ambulance2About />} />
+          </Route>
 
-        {/* Pharmacy (existing) */}
-        <Route path="/pharmacy">
-          <Route index element={<PharmacyHome />} />
-          <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
-         <Route path="/pharmacy/contact" element={<PharmacyContact />} />
-        </Route>
-        <Route path="/pharmacy2" element={<PharmacyLanding />} />
-        <Route path="/pharmacy2/About" element={<PharmacyAbout2 />} />
-        <Route path="/pharmacy2/contact" element={<PharmacyContact2/>} />
-        
+          {/* Pharmacy (existing) */}
+          <Route path="/pharmacy">
+            <Route index element={<PharmacyHome />} />
+            <Route path="/pharmacy/about-us" element={<PharmacyAbout />} />
+           <Route path="/pharmacy/contact" element={<PharmacyContact />} />
+          </Route>
+          <Route path="/pharmacy2" element={<PharmacyLanding />} />
+          <Route path="/pharmacy2/About" element={<PharmacyAbout2 />} />
+          <Route path="/pharmacy2/contact" element={<PharmacyContact2/>} />
+          
 
-        {/* --- NEW: Doctor landing (mirror ambulance style) --- */}
-        <Route path="/doctor">
-          <Route index element={<DoctorHome />} />
-          <Route path="/doctor/services" element={<DoctorServices />} />
-          <Route path="/doctor/about" element={<DoctorAbout />} />
-          <Route path="/doctor/contact" element={<DoctorContact />} />
-          <Route path="/doctor/appointment" element={<DoctorAppointment />} />
-          {/* add more if needed */}
-        </Route>
-        <Route path="/bloodbank" >
-        <Route index  element={<BloodBankHome/>} />
-        {/* <Route path="/bloodbank/about" element={<BloodBankAbout />} /> */}
-        </Route>
-        <Route path="/bloodBank2" element={<BloodBankHome2 />} />
-        <Route path="/bloodBank2/about" element={<BloodBankAbout2 />} />
-        <Route path="/bloodBank2/Donate" element={<BloodBankDonate2 />} />
-        <Route path="/bloodBank2/contact" element={<BloodBankContact2 />} />
-        {/* <Route path="/bloodBank2/contact" element={<BloodBankContact2 />} /> */}
-        <Route path="/bloodBank2/Blog" element={<BloodBankBlog2 />} />
-        <Route path="/bloodBank2/search" element={<BloodBankSearchBlood2/>} />
+          {/* --- NEW: Doctor landing (mirror ambulance style) --- */}
+          <Route path="/doctor">
+            <Route index element={<DoctorHome />} />
+            <Route path="/doctor/services" element={<DoctorServices />} />
+            <Route path="/doctor/about" element={<DoctorAbout />} />
+            <Route path="/doctor/contact" element={<DoctorContact />} />
+            <Route path="/doctor/appointment" element={<DoctorAppointment />} />
+            {/* add more if needed */}
+          </Route>
+          <Route path="/bloodbank" >
+          <Route index  element={<BloodBankHome/>} />
+          {/* <Route path="/bloodbank/about" element={<BloodBankAbout />} /> */}
+          </Route>
+          <Route path="/bloodBank2" element={<BloodBankHome2 />} />
+          <Route path="/bloodBank2/about" element={<BloodBankAbout2 />} />
+          <Route path="/bloodBank2/Donate" element={<BloodBankDonate2 />} />
+          <Route path="/bloodBank2/contact" element={<BloodBankContact2 />} />
+          {/* <Route path="/bloodBank2/contact" element={<BloodBankContact2 />} /> */}
+          <Route path="/bloodBank2/Blog" element={<BloodBankBlog2 />} />
+          <Route path="/bloodBank2/search" element={<BloodBankSearchBlood2/>} />
 
-        <Route path="/DoctorLanding2" element={<DoctorLanding2/>} />
-        <Route path="/hospitalLanding2" element={<HospitalLanding2/>} />
+          <Route path="/DoctorLanding2" element={<DoctorLanding2/>} />
+          <Route path="/hospitalLanding2" element={<HospitalLanding2/>} />
 
-        {/* Explicit admin/dashboard routes so Header/Layout mount on client navigation */}
-        <Route path="/dashboard" element={
-          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
-            <PharmacyDashboard />
-          </Layout>
-        } />
-        <Route path="/dashboard2" element={
-          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
-            <Dashboard2 />
-          </Layout>
-        } />
-        <Route path="/dashboard3" element={
-          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
-            <Dashboard3 />
-          </Layout>
-        } />
+          {/* Explicit admin/dashboard routes so Header/Layout mount on client navigation */}
+          <Route path="/dashboard" element={
+            <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+              <PharmacyDashboard />
+            </Layout>
+          } />
+          <Route path="/dashboard2" element={
+            <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+              <Dashboard2 />
+            </Layout>
+          } />
+          <Route path="/dashboard3" element={
+            <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+              <Dashboard3 />
+            </Layout>
+          } />
 
-        {/* All Dashboard Routes with Layout (fallback for other dashboard-like routes) */}
-        <Route path="/*" element={
-          <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
-            <Routes>
-              <Route path="/products" element={<Products />} />
-              <Route path="/sales" element={<Sales />} />
-              <Route path="/payments" element={<Payments />} />
-              <Route path="/invoices" element={<Invoice />} />
-              <Route path="/invoice-list" element={<InvoiceList />} />
-              <Route path="/support" element={<Support />} />
-              <Route path="/users" element={<div className="p-6"><h1 className="text-2xl font-bold">Users Page</h1></div>} />
-              <Route path="/orders" element={<Orders />} />
-              <Route path="/reports" element={<div className="p-6"><h1 className="text-2xl font-bold">Reports Page</h1></div>} />
-              <Route path="/settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Settings Page</h1></div>} />
-            </Routes>
-          </Layout>
-        } />
-      </Routes>
-    </Router>
+          {/* All Dashboard Routes with Layout (fallback for other dashboard-like routes) */}
+          <Route path="/*" element={
+            <Layout isOpen={isOpen} setIsOpen={setIsOpen}>
+              <Routes>
+                <Route path="/products" element={<Products />} />
+                <Route path="/sales" element={<Sales />} />
+                <Route path="/payments" element={<Payments />} />
+                <Route path="/invoices" element={<Invoice />} />
+                <Route path="/invoice-list" element={<InvoiceList />} />
+                <Route path="/support" element={<Support />} />
+                <Route path="/users" element={<div className="p-6"><h1 className="text-2xl font-bold">Users Page</h1></div>} />
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/reports" element={<div className="p-6"><h1 className="text-2xl font-bold">Reports Page</h1></div>} />
+                <Route path="/settings" element={<div className="p-6"><h1 className="text-2xl font-bold">Settings Page</h1></div>} />
+              </Routes>
+            </Layout>
+          } />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   )
 }
 

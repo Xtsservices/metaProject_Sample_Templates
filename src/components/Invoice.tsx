@@ -42,14 +42,14 @@ const Invoice: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
+      <div className="max-w-6xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg border border-gray-200 dark:border-white">
         {/* Header */}
-        <div className="border-b border-gray-200 p-6">
+        <div className="border-b border-gray-200 dark:border-gray-700 p-6">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">Invoice</h1>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
+              <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">Invoice</h1>
+              <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                 <span>🏠</span>
                 <span>Invoice</span>
                 <span>-</span>
@@ -69,49 +69,49 @@ const Invoice: React.FC = () => {
           </div>
 
           <div className="flex justify-between items-start">
-            <h2 className="text-2xl font-semibold text-gray-700">Invoice Sample</h2>
-            <p className="text-gray-600">{invoiceData.date}</p>
+            <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">Invoice Sample</h2>
+            <p className="text-gray-600 dark:text-gray-300">{invoiceData.date}</p>
           </div>
         </div>
 
         {/* From/To Section */}
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-6 border-b border-gray-200 dark:border-gray-700">
           <div className="flex justify-between">
             <div>
-              <p className="text-sm text-gray-500 mb-1">From</p>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{invoiceData.from.name}</h3>
-              <p className="text-sm text-gray-600">{invoiceData.from.address}</p>
-              <p className="text-sm text-gray-600">Phone: {invoiceData.from.phone}</p>
-              <p className="text-sm text-gray-600">Email: {invoiceData.from.email}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">From</p>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{invoiceData.from.name}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{invoiceData.from.address}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Phone: {invoiceData.from.phone}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Email: {invoiceData.from.email}</p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-gray-500 mb-1">To</p>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{invoiceData.to.name}</h3>
-              <p className="text-sm text-gray-600">{invoiceData.to.address}</p>
-              <p className="text-sm text-gray-600">Phone: {invoiceData.to.phone}</p>
-              <p className="text-sm text-gray-600">Email: {invoiceData.to.email}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">To</p>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{invoiceData.to.name}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{invoiceData.to.address}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Phone: {invoiceData.to.phone}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Email: {invoiceData.to.email}</p>
             </div>
           </div>
         </div>
 
         {/* Invoice Details */}
-        <div className="p-6 border-b border-gray-200 bg-gray-50">
+        <div className="p-6 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700">
           <div className="grid grid-cols-4 gap-4">
             <div>
-              <p className="text-sm text-gray-500">Invoice</p>
-              <p className="font-semibold text-gray-800">{invoiceData.invoiceNumber}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Invoice</p>
+              <p className="font-semibold text-gray-800 dark:text-white">{invoiceData.invoiceNumber}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-500">Order ID</p>
-              <p className="font-semibold text-gray-800">{invoiceData.orderID}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Order ID</p>
+              <p className="font-semibold text-gray-800 dark:text-white">{invoiceData.orderID}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-500">Payment Due</p>
-              <p className="font-semibold text-gray-800">{invoiceData.paymentDue}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Payment Due</p>
+              <p className="font-semibold text-gray-800 dark:text-white">{invoiceData.paymentDue}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-500">Account</p>
-              <p className="font-semibold text-gray-800">{invoiceData.account}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Account</p>
+              <p className="font-semibold text-gray-800 dark:text-white">{invoiceData.account}</p>
             </div>
           </div>
         </div>
@@ -120,24 +120,24 @@ const Invoice: React.FC = () => {
         <div className="p-6">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-gray-200">
-                <th className="text-left py-3 px-2 text-sm font-semibold text-gray-600">#</th>
-                <th className="text-left py-3 px-2 text-sm font-semibold text-gray-600">Description</th>
-                <th className="text-left py-3 px-2 text-sm font-semibold text-gray-600">Serial #</th>
-                <th className="text-right py-3 px-2 text-sm font-semibold text-gray-600">Quantity</th>
-                <th className="text-right py-3 px-2 text-sm font-semibold text-gray-600">Unit Cost</th>
-                <th className="text-right py-3 px-2 text-sm font-semibold text-gray-600">Subtotal</th>
+              <tr className="border-b border-gray-200 dark:border-gray-700">
+                <th className="text-left py-3 px-2 text-sm font-semibold text-gray-600 dark:text-gray-300">#</th>
+                <th className="text-left py-3 px-2 text-sm font-semibold text-gray-600 dark:text-gray-300">Description</th>
+                <th className="text-left py-3 px-2 text-sm font-semibold text-gray-600 dark:text-gray-300">Serial #</th>
+                <th className="text-right py-3 px-2 text-sm font-semibold text-gray-600 dark:text-gray-300">Quantity</th>
+                <th className="text-right py-3 px-2 text-sm font-semibold text-gray-600 dark:text-gray-300">Unit Cost</th>
+                <th className="text-right py-3 px-2 text-sm font-semibold text-gray-600 dark:text-gray-300">Subtotal</th>
               </tr>
             </thead>
             <tbody>
               {invoiceData.items.map((item) => (
-                <tr key={item.id} className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="py-4 px-2 text-gray-600">{item.id}</td>
-                  <td className="py-4 px-2 text-gray-800">{item.description}</td>
-                  <td className="py-4 px-2 text-gray-600">{item.serial}</td>
-                  <td className="py-4 px-2 text-right text-gray-600">{item.quantity}</td>
-                  <td className="py-4 px-2 text-right text-gray-600">${item.unitCost.toFixed(2)}</td>
-                  <td className="py-4 px-2 text-right text-gray-800 font-semibold">${item.subtotal.toFixed(2)}</td>
+                <tr key={item.id} className="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <td className="py-4 px-2 text-gray-600 dark:text-gray-300">{item.id}</td>
+                  <td className="py-4 px-2 text-gray-800 dark:text-white">{item.description}</td>
+                  <td className="py-4 px-2 text-gray-600 dark:text-gray-300">{item.serial}</td>
+                  <td className="py-4 px-2 text-right text-gray-600 dark:text-gray-300">{item.quantity}</td>
+                  <td className="py-4 px-2 text-right text-gray-600 dark:text-gray-300">${item.unitCost.toFixed(2)}</td>
+                  <td className="py-4 px-2 text-right text-gray-800 dark:text-white font-semibold">${item.subtotal.toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>
@@ -146,23 +146,23 @@ const Invoice: React.FC = () => {
           {/* Totals Section */}
           <div className="flex justify-end mt-8">
             <div className="w-80">
-              <div className="flex justify-between py-2 text-gray-600">
+              <div className="flex justify-between py-2 text-gray-600 dark:text-gray-300">
                 <span>Payment Due:</span>
                 <span className="text-red-500">{invoiceData.paymentDue}</span>
               </div>
-              <div className="flex justify-between py-2 text-gray-600">
+              <div className="flex justify-between py-2 text-gray-600 dark:text-gray-300">
                 <span>Sub - Total amount:</span>
                 <span>${invoiceData.subTotal.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between py-2 text-gray-600">
+              <div className="flex justify-between py-2 text-gray-600 dark:text-gray-300">
                 <span>Tax (18%):</span>
                 <span>${invoiceData.tax.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between py-2 text-gray-600 border-b border-gray-200 pb-4">
+              <div className="flex justify-between py-2 text-gray-600 dark:text-gray-300 border-b border-gray-200 pb-4">
                 <span>Shipping:</span>
                 <span>${invoiceData.shipping.toFixed(2)}</span>
               </div>
-              <div className="flex justify-between py-4 text-xl font-bold text-gray-800">
+              <div className="flex justify-between py-4 text-xl font-bold text-gray-800 dark:text-white">
                 <span>Total:</span>
                 <span>${invoiceData.total.toFixed(2)}</span>
               </div>

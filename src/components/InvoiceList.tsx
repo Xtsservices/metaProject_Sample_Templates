@@ -87,12 +87,12 @@ const InvoiceList: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">Invoice List</h1>
-          <div className="flex items-center gap-2 text-sm text-gray-500">
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">Invoice List</h1>
+          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
             <span>🏠</span>
             <span>Invoice</span>
             <span>-</span>
@@ -103,29 +103,29 @@ const InvoiceList: React.FC = () => {
         <div className="flex gap-6">
           {/* Main Content */}
           <div className="flex-1">
-            <div className="bg-white rounded-lg shadow">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-white">
               {/* Title and Export Options */}
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-xl font-semibold text-gray-800 mb-1">Invoice List</h2>
-                <p className="text-sm text-gray-500">Export Invoice List to Copy, CSV, Excel, PDF & Print</p>
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-1">Invoice List</h2>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Export Invoice List to Copy, CSV, Excel, PDF & Print</p>
               </div>
 
               {/* Action Buttons and Search */}
-              <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+              <div className="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
                 <div className="flex gap-2">
-                  <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-sm font-medium text-gray-700">
+                  <button className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300">
                     Copy
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-sm font-medium text-gray-700">
+                  <button className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300">
                     CSV
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-sm font-medium text-gray-700">
+                  <button className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300">
                     Excel
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-sm font-medium text-gray-700">
+                  <button className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300">
                     PDF
                   </button>
-                  <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-sm font-medium text-gray-700">
+                  <button className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300">
                     Print
                   </button>
                 </div>
@@ -135,7 +135,7 @@ const InvoiceList: React.FC = () => {
                     placeholder="Search"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                   />
                 </div>
               </div>
@@ -143,26 +143,26 @@ const InvoiceList: React.FC = () => {
               {/* Table */}
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gray-50 border-b border-gray-200">
+                  <thead className="bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
                     <tr>
-                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">#</th>
-                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Period</th>
-                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Issued to</th>
-                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Status</th>
-                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Issue date</th>
-                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600">Due date</th>
-                      <th className="text-right py-3 px-4 text-xs font-semibold text-gray-600">Amount</th>
-                      <th className="text-center py-3 px-4 text-xs font-semibold text-gray-600">Actions</th>
+                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">#</th>
+                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Period</th>
+                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Issued to</th>
+                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Status</th>
+                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Issue date</th>
+                      <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Due date</th>
+                      <th className="text-right py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Amount</th>
+                      <th className="text-center py-3 px-4 text-xs font-semibold text-gray-600 dark:text-gray-300">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {invoices.map((invoice, ) => (
-                      <tr key={invoice.id} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="py-4 px-4 text-sm text-blue-600 font-medium">{invoice.id}</td>
-                        <td className="py-4 px-4 text-sm text-gray-700">{invoice.period}</td>
+                    {invoices.map((invoice) => (
+                      <tr key={invoice.id} className="border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <td className="py-4 px-4 text-sm text-blue-600 dark:text-blue-400 font-medium">{invoice.id}</td>
+                        <td className="py-4 px-4 text-sm text-gray-700 dark:text-gray-300">{invoice.period}</td>
                         <td className="py-4 px-4">
-                          <div className="text-sm text-blue-600">{invoice.issuedTo}</div>
-                          <div className="text-xs text-gray-500">Payment method: {invoice.paymentMethod}</div>
+                          <div className="text-sm text-blue-600 dark:text-blue-400">{invoice.issuedTo}</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400">Payment method: {invoice.paymentMethod}</div>
                         </td>
                         <td className="py-4 px-4">
                           <select className={`px-3 py-1 rounded text-xs font-medium ${getStatusColor(invoice.status)} border-none focus:outline-none`}>
@@ -174,15 +174,15 @@ const InvoiceList: React.FC = () => {
                           {getDueDateBadge(invoice.dueDate, invoice.dueDateLabel, invoice.status)}
                         </td>
                         <td className="py-4 px-4 text-right">
-                          <div className="text-sm font-semibold text-gray-800">${invoice.amount}</div>
-                          <div className="text-xs text-gray-500">VAT ${invoice.vat}</div>
+                          <div className="text-sm font-semibold text-gray-800 dark:text-gray-100">${invoice.amount}</div>
+                          <div className="text-xs text-gray-500 dark:text-gray-400">VAT ${invoice.vat}</div>
                         </td>
                         <td className="py-4 px-4">
                           <div className="flex justify-center gap-2">
-                            <button className="text-blue-600 hover:text-blue-800">
+                            <button className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
                               <Eye size={16} />
                             </button>
-                            <button className="text-blue-600 hover:text-blue-800">
+                            <button className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
                               <Trash2 size={16} />
                             </button>
                           </div>
@@ -194,21 +194,21 @@ const InvoiceList: React.FC = () => {
               </div>
 
               {/* Pagination */}
-              <div className="p-4 border-t border-gray-200 flex justify-between items-center">
-                <div className="text-sm text-gray-600">
+              <div className="p-4 border-t border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                <div className="text-sm text-gray-600 dark:text-gray-400">
                   Showing 1 to 10 of 13 entries
                 </div>
                 <div className="flex gap-2">
-                  <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm text-gray-700">
+                  <button className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm text-gray-700 dark:text-gray-300">
                     Previous
                   </button>
                   <button className="px-3 py-1 bg-blue-500 text-white rounded text-sm">
                     1
                   </button>
-                  <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm text-gray-700">
+                  <button className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm text-gray-700 dark:text-gray-300">
                     2
                   </button>
-                  <button className="px-3 py-1 border border-gray-300 rounded hover:bg-gray-50 text-sm text-gray-700">
+                  <button className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-50 dark:hover:bg-gray-700 text-sm text-gray-700 dark:text-gray-300">
                     Next
                   </button>
                 </div>
@@ -216,10 +216,10 @@ const InvoiceList: React.FC = () => {
             </div>
           </div>
 
-          {/* Sidebar Stats */}
+          {/* Sidebar Stats - Keep gradient backgrounds */}
           <div className="w-80 space-y-4">
             {stats.map((stat, index) => (
-              <div key={index} className={`${stat.color} rounded-lg p-6 text-white relative overflow-hidden`}>
+              <div key={index} className={`${stat.color} rounded-lg p-6 text-white relative overflow-hidden border ${index === 0 ? 'dark:border-white' : 'border-transparent'}`}>
                 {/* top-right icon */}
                 <div className="absolute top-3 right-3">
                   <MoreVertical className="w-4 h-4 opacity-90" />

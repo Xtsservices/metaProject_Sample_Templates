@@ -10,7 +10,7 @@ interface LayoutProps {
 
 const Layout = ({ children, isOpen, setIsOpen }: LayoutProps) => {
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <main className={`flex-1 overflow-auto transition-all duration-300 pt-16 ${isOpen ? 'lg:ml-72' : 'lg:ml-0'}`}>
