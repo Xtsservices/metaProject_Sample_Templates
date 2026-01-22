@@ -86,7 +86,7 @@ const Payments: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/20 to-slate-50 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/20 to-slate-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 p-8">
       <div className="max-w-[1600px] mx-auto space-y-8">
         
         {/* Payment Stats Grid */}
@@ -94,7 +94,7 @@ const Payments: React.FC = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`${stat.bgColor} rounded-2xl shadow-sm border border-slate-200 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+              className={`${stat.bgColor} dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
             >
               <div className="flex items-start justify-between mb-6">
                 <div className={`${stat.iconBg} ${stat.iconColor} p-3 rounded-xl`}>
@@ -106,19 +106,19 @@ const Payments: React.FC = () => {
               </div>
               
               <div className="space-y-1 mb-3">
-                <h3 className="text-sm font-semibold text-slate-900">
+                <h3 className="text-sm font-semibold text-slate-900 dark:text-white">
                   {stat.title}
                 </h3>
-                <p className="text-xs text-slate-600">
+                <p className="text-xs text-slate-600 dark:text-slate-300">
                   {stat.revenue}
                 </p>
               </div>
               
               <div className="flex items-baseline justify-between">
-                <span className="text-4xl font-bold text-slate-900">
+                <span className="text-4xl font-bold text-slate-900 dark:text-white">
                   {stat.count}
                 </span>
-                <span className="text-xs text-slate-500">
+                <span className="text-xs text-slate-500 dark:text-slate-400">
                   {stat.subtitle}
                 </span>
               </div>
@@ -127,27 +127,25 @@ const Payments: React.FC = () => {
         </div>
 
         {/* Payment Lists */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-          <div className="p-6 border-b border-slate-200">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-slate-200 dark:border-white overflow-hidden">
+          <div className="p-6 border-b border-slate-200 dark:border-slate-700">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-slate-900">Payment Lists</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white">Payment Lists</h2>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-slate-600">Show</span>
-                  <select className="px-3 py-1.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-slate-700">
+                  <span className="text-sm text-slate-600 dark:text-slate-300">Show</span>
+                  <select className="px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-slate-700 dark:text-slate-300">
                     <option>10</option>
                     <option>20</option>
                     <option>50</option>
                   </select>
-                  <span className="text-sm text-slate-600">entries</span>
+                  <span className="text-sm text-slate-600 dark:text-slate-300">entries</span>
                 </div>
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="pl-3 pr-10 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
-                  />
-                </div>
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="pl-3 pr-10 py-2 text-sm border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64 bg-white dark:bg-gray-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500"
+                />
               </div>
             </div>
           </div>
@@ -155,9 +153,9 @@ const Payments: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-200">
+                <tr className="bg-slate-50 dark:bg-gray-700 border-b border-slate-200 dark:border-slate-600">
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Order ID
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -165,7 +163,7 @@ const Payments: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Customer Name
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -173,7 +171,7 @@ const Payments: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Order Date
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -181,7 +179,7 @@ const Payments: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Product Ordered
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -189,7 +187,7 @@ const Payments: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Total Price
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -197,7 +195,7 @@ const Payments: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Transaction ID
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -205,7 +203,7 @@ const Payments: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Order Status
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -213,7 +211,7 @@ const Payments: React.FC = () => {
                     </div>
                   </th>
                   <th className="px-6 py-4 text-left">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 uppercase tracking-wider">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
                       Action
                       <svg className="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
@@ -222,25 +220,25 @@ const Payments: React.FC = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200">
+              <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
                 {payments.map((payment, index) => (
-                  <tr key={index} className="hover:bg-slate-50 transition-colors">
-                    <td className="px-6 py-4 text-sm font-medium text-slate-900">
+                  <tr key={index} className="hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors">
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-white">
                       {payment.orderId}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {payment.customerName}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {payment.orderDate}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {payment.productOrdered}
                     </td>
                     <td className="px-6 py-4 text-sm font-medium text-slate-900">
                       ${payment.totalPrice}
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-700">
+                    <td className="px-6 py-4 text-sm text-slate-700 dark:text-slate-300">
                       {payment.transactionId}
                     </td>
                     <td className="px-6 py-4">
@@ -277,8 +275,8 @@ const Payments: React.FC = () => {
             </table>
           </div>
 
-          <div className="px-6 py-4 border-t border-slate-200 flex items-center justify-between">
-            <div className="text-sm text-slate-600">
+          <div className="px-6 py-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <div className="text-sm text-slate-600 dark:text-slate-400">
               Showing 1 to 10 of 10 entries
             </div>
             <div className="flex items-center gap-2">
