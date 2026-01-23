@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
-
+import MetadevLogo from '../../../assets/MetadevLogo.jpg';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-900 text-white">
@@ -115,6 +115,14 @@ const Footer: React.FC = () => {
             <p className="text-slate-400 text-sm">
               © 2025 OrthoExpert - Dr. Michael Johnson, MD. All rights reserved.
             </p>
+             <div className="mt-3 flex items-center justify-center gap-2">
+            <p className="text-xs text-gray-500">Powered by MetaDev</p>
+            <img 
+              src={MetadevLogo}
+              alt="MetaDev Logo"
+              className="h-16 w-auto"
+            />
+          </div>
             <div className="flex gap-6">
               <Link to="/privacy" className="text-slate-400 hover:text-white text-sm transition">
                 Privacy Policy

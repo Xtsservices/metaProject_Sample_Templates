@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, MapPin, Phone, Mail } from 'lucide-react';
+import MetadevLogo from '../../assets/MetadevLogo.jpg';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -63,6 +64,14 @@ export default function Footer() {
           <p className="text-gray-400">
             © {currentYear} MedHealth - All rights reserved
           </p>
+          <div className="mt-3 flex items-center justify-center gap-2">
+            <p className="text-xs text-gray-500">Powered by MetaDev</p>
+            <img 
+              src={MetadevLogo}
+              alt="MetaDev Logo"
+              className="h-16 w-auto"
+            />
+          </div>
           <div className="flex gap-4">
             <a href="#" className="text-gray-400 hover:text-red-400 transition">
               <Facebook size={24} />

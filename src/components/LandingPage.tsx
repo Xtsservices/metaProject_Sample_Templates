@@ -2,7 +2,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { Shield, Pill, Stethoscope, FlaskConical, Droplet, Ambulance, Building2 } from 'lucide-react';
-
+import MetadevLogo from '../assets/MetadevLogo.jpg';
 export default function LandingPage() {
   const navigate = useNavigate();
 
@@ -60,6 +60,14 @@ export default function LandingPage() {
       icon: FlaskConical,
       description: 'Alternate labs portal',
       path: '/labs2',
+      gradient: 'from-emerald-600 to-emerald-800',
+      textColor: 'text-emerald-700'
+    },
+    {
+      title: 'Labs3',
+      icon: FlaskConical,
+      description: 'Alternate labs portal',
+      path: '/labs3',
       gradient: 'from-emerald-600 to-emerald-800',
       textColor: 'text-emerald-700'
     },
@@ -157,6 +165,14 @@ export default function LandingPage() {
         <div className="text-center mt-10 text-gray-500 text-sm">
           <p>© 2024 Healthcare Management System</p>
         </div>
+        <div className="mt-3 flex items-center justify-center gap-2">
+            <p className="text-xs text-gray-500">Powered by MetaDev</p>
+            <img 
+              src={MetadevLogo}
+              alt="MetaDev Logo"
+              className="h-16 w-auto"
+            />
+          </div>
       </div>
     </div>
   );

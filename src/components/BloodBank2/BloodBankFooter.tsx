@@ -1,7 +1,7 @@
 // src/components/bloodbank/BloodBankFooter.tsx
 import { Heart, MapPin, Phone, Mail, Facebook, Twitter, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import MetadevLogo from '../../assets/MetadevLogo.jpg';
 export default function BloodBankFooter() {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -80,6 +80,14 @@ export default function BloodBankFooter() {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
           © {new Date().getFullYear()} Blood Bank Tanuku. All rights reserved.
         </div>
+        <div className="mt-3 flex items-center justify-center gap-2">
+            <p className="text-xs text-gray-500">Powered by MetaDev</p>
+            <img 
+              src={MetadevLogo}
+              alt="MetaDev Logo"
+              className="h-16 w-auto"
+            />
+          </div>
       </div>
     </footer>
   );

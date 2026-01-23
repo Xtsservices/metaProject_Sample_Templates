@@ -1,5 +1,6 @@
 // src/components/pharmacy/PharmacyFooter.tsx
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import MetadevLogo from '../../assets/MetadevLogo.jpg';
 
 export default function PharmacyFooter() {
   return (
@@ -65,6 +66,14 @@ export default function PharmacyFooter() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>© {new Date().getFullYear()} PharmaCare. All rights reserved.</p>
+          <div className="mt-3 flex items-center justify-center gap-2">
+            <p className="text-xs text-gray-500">Powered by MetaDev</p>
+            <img 
+              src={MetadevLogo}
+              alt="MetaDev Logo"
+              className="h-16 w-auto"
+            />
+          </div>
         </div>
       </div>
     </footer>

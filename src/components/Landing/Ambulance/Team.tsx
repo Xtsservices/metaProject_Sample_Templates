@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Ambulance, Phone, Clock, Award, Heart, Star, Mail } from 'lucide-react';
+import { useState } from 'react';
+import { Award, Heart, Star, Clock, Mail, Ambulance } from 'lucide-react';
+import Header from './Header';
+import Footer from './Footer';
 
-const Team: React.FC = () => {
+const Team = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('All');
 
   const departments = ['All', 'Paramedics', 'Doctors', 'Management', 'Support Staff'];
@@ -96,54 +97,7 @@ const Team: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Top Bar */}
-      <div className="bg-red-600 text-white py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-between items-center text-sm">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span className="font-semibold">Emergency: 911</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span>Booking: +1 (555) 123-4567</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>24/7 Emergency Service Available</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
-                <Ambulance className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-800">AmCare</h1>
-                <p className="text-xs text-gray-500">Ambulance Service</p>
-              </div>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link to="/ambulance" className="text-gray-600 hover:text-red-600 transition">Home</Link>
-              <Link to="/ambulance/about" className="text-gray-600 hover:text-red-600 transition">About</Link>
-              <Link to="/ambulance/services" className="text-gray-600 hover:text-red-600 transition">Services</Link>
-              <Link to="/ambulance/team" className="text-red-600 font-semibold">Team</Link>
-              <Link to="/ambulance/contact" className="text-gray-600 hover:text-red-600 transition">Contact</Link>
-            </nav>
-            <button className="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition font-semibold">
-              Book Now
-            </button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Page Header */}
       <section className="bg-gradient-to-r from-red-600 to-red-700 text-white py-20">
@@ -327,6 +281,8 @@ const Team: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      <Footer />
     </div>
   );
 };

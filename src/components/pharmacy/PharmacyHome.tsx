@@ -5,6 +5,14 @@ import {
 } from 'lucide-react';
 import PharmacyHeader from '../../components/pharmacy/PharmacyHeader';
 import PharmacyFooter from '../../components/pharmacy/PharmacyFooter';
+import VitaminsScreen from './categories/VitaminsScreen';
+import MedicineScreen from './categories/MedicineScreen';
+import SupplementsScreen from './categories/SupplementsScreen';
+import BabyCareScreen from './categories/BabyCareScreen';
+import SkinCareScreen from './categories/SkinCareScreen';
+import PersonalCareScreen from './categories/PersonalCareScreen';
+import HealthDevicesScreen from './categories/HealthDevicesScreen';
+import FirstAidScreen from './categories/FirstAidScreen';
 
 // Types
 interface Product {
@@ -49,10 +57,92 @@ const products: Product[] = [
 
 export default function PharmacyHome() {
   const [cartCount, setCartCount] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const addToCart = (productId: string) => {
     setCartCount(prev => prev + 1);
   };
+
+  // If a category is selected, show the category screen
+  if (selectedCategory === 'Vitamins') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <VitaminsScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
+
+  if (selectedCategory === 'Medicine') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <MedicineScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
+
+  if (selectedCategory === 'Supplements') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <SupplementsScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
+
+  if (selectedCategory === 'Baby Care') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <BabyCareScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
+
+  if (selectedCategory === 'Skin Care') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <SkinCareScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
+
+  if (selectedCategory === 'Personal Care') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <PersonalCareScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
+
+  if (selectedCategory === 'Health Devices') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <HealthDevicesScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
+
+  if (selectedCategory === 'First Aid') {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PharmacyHeader />
+        <FirstAidScreen onBack={() => setSelectedCategory(null)} />
+        <PharmacyFooter />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -107,6 +197,7 @@ export default function PharmacyHome() {
               {categories.map((category) => (
                 <div
                   key={category.id}
+                  onClick={() => setSelectedCategory(category.name)}
                   className="bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition cursor-pointer border border-gray-200 hover:border-teal-500"
                 >
                   <div className="text-4xl mb-3">{category.icon}</div>

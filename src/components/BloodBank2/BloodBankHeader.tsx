@@ -11,7 +11,7 @@ export default function BloodBankHeader() {
     { name: 'About', path: '/bloodBank2/about' },
     { name: 'Donate', path: '/bloodbank2/donate' },
     { name: 'Find Blood', path: '/bloodBank2/search' },
-    { name: 'Blog', path: '/bloodbank2/blog' },
+    // { name: 'Blog', path: '/bloodbank2/blog' },
     { name: 'Contact', path: '/bloodbank2/contact' },
   ];
 
