@@ -30,12 +30,12 @@ export default function PharmacyHeader2() {
 
           {/* Actions */}
           <div className="flex items-center gap-5">
-            <button className="hidden md:flex items-center gap-2 hover:text-emerald-200 transition-colors">
+            <button className="hidden md:flex items-center gap-2 text-white hover:text-emerald-900 transition-colors">
               <User className="w-5 h-5" />
               <span>Login</span>
             </button>
 
-            <button className="relative hover:text-emerald-200 transition-colors">
+            <button className="relative text-white hover:text-emerald-900 transition-colors">
               <ShoppingCart className="w-6 h-6" />
               <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 0

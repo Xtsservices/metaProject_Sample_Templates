@@ -100,9 +100,24 @@ const InvoiceList: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex gap-6">
-          {/* Main Content */}
-          <div className="flex-1">
+        <div className="flex flex-col gap-6">
+          {/* Top Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {stats.map((stat, index) => (
+              <div key={index} className={`${stat.color} rounded-lg p-6 text-white relative overflow-hidden border ${index === 0 ? 'dark:border-white' : 'border-transparent'}`}>
+                {/* top-right icon */}
+                <div className="absolute top-3 right-3">
+                  <MoreVertical className="w-4 h-4 opacity-90" />
+                </div>
+                <div className="text-sm opacity-90 mb-2">{stat.label}</div>
+                <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                <div className="text-xs opacity-90">{stat.subtext}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Main Content - Invoice List */}
+          <div>
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-white">
               {/* Title and Export Options */}
               <div className="p-6 border-b border-gray-200 dark:border-gray-700">
@@ -214,21 +229,6 @@ const InvoiceList: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Sidebar Stats - Keep gradient backgrounds */}
-          <div className="w-80 space-y-4">
-            {stats.map((stat, index) => (
-              <div key={index} className={`${stat.color} rounded-lg p-6 text-white relative overflow-hidden border ${index === 0 ? 'dark:border-white' : 'border-transparent'}`}>
-                {/* top-right icon */}
-                <div className="absolute top-3 right-3">
-                  <MoreVertical className="w-4 h-4 opacity-90" />
-                </div>
-                <div className="text-sm opacity-90 mb-2">{stat.label}</div>
-                <div className="text-5xl font-bold mb-2">{stat.value}</div>
-                <div className="text-sm opacity-90">{stat.subtext}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

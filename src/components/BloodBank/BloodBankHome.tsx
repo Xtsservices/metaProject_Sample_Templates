@@ -4,7 +4,7 @@ import {
   Heart, Droplet, Phone, Mail, MapPin, Clock, ChevronRight,
   Facebook, Instagram, Youtube, Users, Calendar, Clock as ClockIcon 
 } from 'lucide-react';
-
+import MetadevLogo from '../../assets/MetadevLogo.jpg';
 // ── Shared Header Component ────────────────────────────────────────────────
 function BloodBankHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -165,6 +165,14 @@ function BloodBankFooter() {
         <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
           © {new Date().getFullYear()} LifeBlood Organization. All rights reserved.
         </div>
+        <div className="mt-3 flex items-center justify-center gap-2">
+            <p className="text-xs text-gray-500">Powered by MetaDev</p>
+            <img 
+              src={MetadevLogo}
+              alt="MetaDev Logo"
+              className="h-16 w-auto"
+            />
+          </div>
       </div>
     </footer>
   );
@@ -245,12 +253,15 @@ export default function BloodBankHome() {
               </div>
 
               {/* Right - Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1587854691338-9e8b3e5e9f2d?auto=format&fit=crop&w=1200&q=80"
-                  alt="Blood donation team"
-                  className="w-full h-auto object-cover aspect-[4/3]"
-                />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-red-600">
+                <svg className="w-full h-full" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="600" height="450" fill="#dc2626"/>
+                  <circle cx="300" cy="200" r="80" fill="#ffffff" opacity="0.2"/>
+                  <circle cx="150" cy="100" r="60" fill="#ffffff" opacity="0.15"/>
+                  <circle cx="450" cy="350" r="70" fill="#ffffff" opacity="0.1"/>
+                  <text x="300" y="225" textAnchor="middle" fill="#ffffff" fontSize="32" fontWeight="bold">Blood Donation</text>
+                  <text x="300" y="265" textAnchor="middle" fill="#ffffff" fontSize="24">Team</text>
+                </svg>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
             </div>
@@ -278,12 +289,16 @@ export default function BloodBankHome() {
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-red-100">
               <div className="grid md:grid-cols-2">
                 {/* Left - Image */}
-                <div className="relative h-96 md:h-auto">
-                  <img
-                    src="https://images.unsplash.com/photo-1587854691338-9e8b3e5e9f2d?auto=format&fit=crop&w=1200&q=80"
-                    alt="Scientist with blood sample"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                <div className="relative h-96 md:h-auto bg-red-600">
+                  <svg className="w-full h-full" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="600" height="600" fill="#dc2626"/>
+                    <circle cx="300" cy="150" r="50" fill="#ffffff" opacity="0.2"/>
+                    <circle cx="200" cy="300" r="70" fill="#ffffff" opacity="0.15"/>
+                    <circle cx="400" cy="450" r="60" fill="#ffffff" opacity="0.1"/>
+                    <path d="M 300 200 Q 350 250 300 300 Q 250 250 300 200" fill="#ffffff" opacity="0.2"/>
+                    <text x="300" y="400" textAnchor="middle" fill="#ffffff" fontSize="36" fontWeight="bold">Blood</text>
+                    <text x="300" y="450" textAnchor="middle" fill="#ffffff" fontSize="36" fontWeight="bold">Samples</text>
+                  </svg>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
                     <h3 className="text-2xl font-bold mb-2">Register Today!</h3>

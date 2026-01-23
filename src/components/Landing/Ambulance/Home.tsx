@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { Ambulance, Phone, Clock, MapPin, Award, Users, Shield, Heart, CheckCircle, Star, ChevronRight } from 'lucide-react';
+import Header from './Header';
+import Footer from './Footer';
 
 const Home: React.FC = () => {
   const services = [
@@ -67,54 +67,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Top Bar */}
-      <div className="bg-red-600 text-white py-3">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-between items-center text-sm">
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span className="font-semibold">Emergency: 911</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <span>Booking: +1 (555) 123-4567</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>24/7 Emergency Service Available</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center">
-                <Ambulance className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-800">AmCare</h1>
-                <p className="text-xs text-gray-500">Ambulance Service</p>
-              </div>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link to="/ambulance" className="text-red-600 font-semibold">Home</Link>
-              <Link to="/ambulance/about" className="text-gray-600 hover:text-red-600 transition">About</Link>
-              <Link to="/ambulance/services" className="text-gray-600 hover:text-red-600 transition">Services</Link>
-              <Link to="/ambulance/team" className="text-gray-600 hover:text-red-600 transition">Team</Link>
-              <Link to="/ambulance/contact" className="text-gray-600 hover:text-red-600 transition">Contact</Link>
-            </nav>
-            <button className="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition font-semibold">
-              Book Now
-            </button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white py-32">
@@ -337,78 +290,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
-                  <Ambulance className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-2xl font-bold">AmCare</span>
-              </div>
-              <p className="text-gray-400 mb-6">
-                Professional emergency medical services providing quality care 24/7 with certified paramedics.
-              </p>
-              <button className="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition">
-                Contact Us
-              </button>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold mb-6">Quick Links</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#" className="hover:text-white transition">Our Services</a></li>
-                <li><a href="#" className="hover:text-white transition">Our Team</a></li>
-                <li><a href="#" className="hover:text-white transition">Testimonials</a></li>
-                <li><a href="#" className="hover:text-white transition">Contact</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold mb-6">Our Services</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-white transition">Emergency Ambulance</a></li>
-                <li><a href="#" className="hover:text-white transition">ICU Ambulance</a></li>
-                <li><a href="#" className="hover:text-white transition">Air Ambulance</a></li>
-                <li><a href="#" className="hover:text-white transition">Patient Transport</a></li>
-                <li><a href="#" className="hover:text-white transition">Medical Escort</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-bold mb-6">Contact Info</h3>
-              <ul className="space-y-4 text-gray-400">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
-                  <span>123 Emergency Street<br />New York, NY 10001</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 flex-shrink-0" />
-                  <span>Emergency: 911</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 flex-shrink-0" />
-                  <span>+1 (555) 123-4567</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 flex flex-wrap justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © 2025 AmCare Ambulance Service. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white transition">Sitemap</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

@@ -32,6 +32,7 @@ import Support from './components/support/Support'
 import Invoice from './components/Invoice'
 import InvoiceList from './components/InvoiceList'
 import LabsLanding from './components/Landing/Labs/LabsLanding'
+import Labs3Landing from './components/Landing/Labs3/Labs3Landing'
 import { Home as Labs2Home } from './components/Landing/Labs2/Home'
 import { About as Labs2About } from './components/Landing/Labs2/About'
 import { Patients as Labs2Patients } from './components/Landing/Labs2/Patients'
@@ -60,7 +61,6 @@ import DoctorAppointment from './components/Landing/Doctor/Appointment3' // new
 import './App.css'
 
 
-
 function App() {
   const [isOpen, setIsOpen] = useState(true)
 
@@ -79,6 +79,7 @@ function App() {
           <Route path="/labs2/clinicians" element={<Labs2Clinicians />} />
           <Route path="/labs2/blog" element={<Labs2Blog />} />
           <Route path="/hospital" element={<HospitalLanding />} />
+          <Route path="/labs3" element={<Labs3Landing />} />
 
           {/* Ambulance (existing) */}
           <Route path="/ambulance">
